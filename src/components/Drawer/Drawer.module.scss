@@ -1,0 +1,52 @@
+.overlay {
+	position: fixed;
+	top: 10vh;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1001;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	overflow: hidden;
+}
+
+.overlayVisible {
+	visibility: visible;
+	opacity: 1;
+	.drawer {
+		transform: translateX(0);
+	}
+}
+
+.drawer {
+	justify-content: center;
+	display: flex;
+	flex: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	background: rgba(56, 70, 100, 0.726);
+	width: 100%;
+	backdrop-filter: blur(10px);
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+	transform: translate(100%);
+	transition: transform 0.3s ease-in-out;
+
+	div {
+		position: relative;
+		top: 10%;
+		display: flex;
+		text-align: center;
+
+		a {
+			font-family: 'porshe';
+			text-transform: uppercase;
+			color: azure;
+			text-decoration: none;
+			font-size: 3vh;
+			margin-bottom: 30px;
+		}
+	}
+}
