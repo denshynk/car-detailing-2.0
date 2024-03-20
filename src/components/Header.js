@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Drawer from "./Drawer";
 
-function Header({}) {
+function Header() {
 	const [isActiveLink, setIsActiveLink] = useState(null);
 	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 750);
 	const [burgerOpened, setBurgerOpened] = React.useState(false);

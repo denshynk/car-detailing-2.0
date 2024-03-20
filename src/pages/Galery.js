@@ -36,7 +36,7 @@ const Galery = () => {
 						goToSectionRef={section2}
 					>
 						<div className="container">
-							<h1 className="heading"> Нашi робоити</h1>
+							<h1 className="heading"> Нашi роботи</h1>
 							<Swiper
 								effect={"coverflow"}
 								grabCursor={true}

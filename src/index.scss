@@ -198,7 +198,7 @@ code {
 			font-family: "Porshe";
 			display: flex;
 			align-items: center;
-
+			font-size: 4vh;
 			flex-grow: 3;
 			text-shadow: 5px 5px 20px #c94594;
 			// animation: blink-animation 0.1s infinite;
@@ -543,7 +543,7 @@ code {
 			width: 50%;
 			h1 {
 				font-family: "Porshe";
-				font-size: 50px;
+				font-size: 48px;
 				text-wrap: wrap;
 			}
 			p {
@@ -975,7 +975,7 @@ code {
 .line3 {
 	top: 40px;
 	left: 50%;
-	height: 50%;
+	height: 30%;
 	transition-delay: 0.8s;
 }
 
@@ -1055,26 +1055,26 @@ code {
 	top: 8%;
 	width: 0%;
 	transition-delay: 0.4s;
-	left: 140%;
+	left: 130%;
 }
 
 .line2-phone {
 	top: 20%;
-	left: 142%;
+	left: 130%;
 	width: 0%;
 	transition-delay: 0.6s;
 }
 
 .line3-phone {
 	top: 32%;
-	left: 144%;
+	left: 130%;
 	width: 0%;
 	transition-delay: 0.8s;
 }
 
 .line4-phone {
 	top: 44%;
-	left: 146%;
+	left: 130%;
 	width: 0%;
 	transition-delay: 1s;
 }
@@ -1099,9 +1099,12 @@ ul {
 		top: 10vh;
 	}
 	.row {
+		
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		flex-direction: column;
+		left:25%;
+		
 		h4 {
 			margin-top: 3vh;
 			margin-bottom: 3vh;

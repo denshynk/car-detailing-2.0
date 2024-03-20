@@ -235,7 +235,7 @@ function Footer() {
 		return (
 			<>
 				<Section>
-					<div className="LastPagepage">
+					<div className="LastPagepage" >
 						<div
 							className="CallBackBlock "
 							style={{ height: "100vh", marginTop: "-25px" }}
@@ -267,7 +267,7 @@ function Footer() {
 											onChange={handleChange}
 										/>
 										<label htmlFor="name" className="form__label">
-											Ваш телефон *
+											Контактний номер *
 										</label>
 									</div>
 									<div className="form__group field">
@@ -306,8 +306,8 @@ function Footer() {
 					<footer className="footer-section" style={{ height: "100vh" }}>
 						<div className="footer-container ">
 							<div className="footer-cta ">
-								<div className="row">
-									<div className="col-xl-4 col-md-4 ">
+								<div className="d-flex justify-center"><div className="row">
+									<div className="col-xl-4 col-md-4">
 										<div className="single-cta">
 											<FontAwesomeIcon icon={faMapMarkerAlt} />
 											<div className="cta-text">
@@ -334,7 +334,7 @@ function Footer() {
 											</div>
 										</div>
 									</div>
-								</div>
+								</div></div>
 							</div>
 							<div className="footer-content pt-5 pb-5">
 								<div className="row ">

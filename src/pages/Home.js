@@ -28,7 +28,7 @@ const Home = () => {
 									Отримайте більше задоволення від Вашого авто разом з{" "}
 									<b>Apex Safe Car</b>
 								</p>
-								<h1>СУЧАСНА ДIТЕЙЛIНГ СТУДIЯ!</h1>
+								<h1>СУЧАСНА ДEТЕЙЛIНГ СТУДIЯ!</h1>
 							</div>
 						</div>
 					</Section>
@@ -42,7 +42,7 @@ const Home = () => {
 						<div className="secondpage">
 							<div className="pageSlice mt-40">
 								<h1>
-									ASC - Auto Safe Car
+									ASC - Apex Safe Car
 								</h1>
 								<ImageComponent />
 							</div>
