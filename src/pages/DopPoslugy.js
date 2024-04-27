@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const DopPoslugy = () => {
 	const section1 = useRef();
 	const section2 = useRef();
-	const section3 = useRef();
+	const lastSection = useRef();
 	const section4 = useRef();
 
 	function scrollTo(section) {
@@ -100,12 +100,12 @@ const DopPoslugy = () => {
 					<Section
 						showArrow={true}
 						scrollTo={scrollTo}
-						goToSectionRef={section3}
+						goToSectionRef={lastSection}
 					>
 						<div
 							className="secondPageDopposugy"
 							style={{
-								backgroundImage: 'url("..//img/dopposlugy/dopposlugy2.jpg")',
+								backgroundImage: 'url("..//img/dopposlugy/dopposlugy3.jpg")',
 							}}
 						>
 							<div className="firstPageBox" ref={secondtRef}>
@@ -121,7 +121,7 @@ const DopPoslugy = () => {
 										під час паркування.
 									</li>
 									<li>
-										СИСТЕМИ МУЛЬТИМЕДІА ТА: Насолоджуйтеся відмінною якістю
+										СИСТЕМИ МУЛЬТИМЕДІА ТА АВТОМАГНІТОЛИ: Насолоджуйтеся відмінною якістю
 										звуку та зручністю взаємодії з вашими улюбленими
 										мультимедійними пристроями в автомобілі.
 									</li>
@@ -142,7 +142,7 @@ const DopPoslugy = () => {
 									<li>
 										АПГРЕЙД ФАР: Головне світло автомобіля- один з найважливіших
 										атрибутів безпеки та комфорту під час поїздки. Досягніть
-										найкращої видимості з допомогою перепаковки фар та заміни
+										найкращої видимості з допомогою перепаковки фар, полірування та заміни
 										ламп.
 									</li>
 								</ul>
@@ -151,7 +151,7 @@ const DopPoslugy = () => {
 					</Section>
 				</div>
 
-				<div ref={section3}>
+				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
 						<Footer />
 					</Section>

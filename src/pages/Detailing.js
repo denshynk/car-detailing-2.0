@@ -10,7 +10,7 @@ const Detailing = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
-	const section4 = useRef();
+	const lastSection = useRef();
 
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
@@ -58,69 +58,69 @@ const Detailing = () => {
 			}
 		);
 	});
-		const thirstRef = useRef();
-		React.useLayoutEffect(() => {
-			gsap.fromTo(
-				thirstRef.current,
-				{
-					opacity: 0,
-					y: -140,
+	const thirstRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			thirstRef.current,
+			{
+				opacity: 0,
+				y: -140,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: thirstRef.current,
+					start: "top center",
+					end: "bottom center",
 				},
-				{
-					opacity: 1,
-					y: 0,
-					duration: 1,
-					scrollTrigger: {
-						scroller: ".boxik",
-						trigger: thirstRef.current,
-						start: "top center",
-						end: "bottom center",
-					},
-				}
-			);
-		});
-		const fourthRef = useRef();
-		React.useLayoutEffect(() => {
-			gsap.fromTo(
-				fourthRef.current,
-				{
-					opacity: 0,
-					x: -500,
+			}
+		);
+	});
+	const fourthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fourthRef.current,
+			{
+				opacity: 0,
+				x: -500,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: fourthRef.current,
+					start: "top center",
+					end: "bottom center",
 				},
-				{
-					opacity: 1,
-					x: 0,
-					duration: 1,
-					scrollTrigger: {
-						scroller: ".boxik",
-						trigger: fourthRef.current,
-						start: "top center",
-						end: "bottom center",
-					},
-				}
-			);
-		});
-		const fifthRef = useRef();
-		React.useLayoutEffect(() => {
-			gsap.fromTo(
-				fifthRef.current,
-				{
-					opacity: 0,
-					x: 500,
+			}
+		);
+	});
+	const fifthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fifthRef.current,
+			{
+				opacity: 0,
+				x: 500,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: fifthRef.current,
+					start: "top center",
+					end: "bottom center",
 				},
-				{
-					opacity: 1,
-					x: 0,
-					duration: 1,
-					scrollTrigger: {
-						scroller: ".boxik",
-						trigger: fifthRef.current,
-						start: "top center",
-						end: "bottom center",
-					},
-				}
-			);
-		});
+			}
+		);
+	});
 
 	return (
 		<>
@@ -146,7 +146,7 @@ const Detailing = () => {
 										застосуванням високотехнологічних та професійних засобів.
 										Особлива увага приділяється дрібним деталям у важкодоступних
 										місцях. Ваш автомобіль набуде чудового зовнішнього вигляду
-										без мікроподряпин і мокрих автокрісел
+										без мікроподряпин та слідів бітуму.
 									</p>
 									<div className="d-flex flex-column align-end  mt-20">
 										<h2>ПЕРЕВАГИ ДЕТЕЙЛІНГ МИТТЯ</h2>
@@ -175,14 +175,14 @@ const Detailing = () => {
 						<div
 							className="secondPageDet"
 							style={{
-								backgroundImage: 'url("..//img/detailing/detailing2.jpg")',
+								backgroundImage: 'url("..//img/detailing/detailing5.jpg")',
 							}}
 						>
 							<div className="firstPageBox" ref={secondtRef}>
-								<h1>ASC проводить трифазне миття автомобіля</h1>
+								<h1 className="textH1">ASC проводить трифазне миття автомобіля</h1>
 								<div className="container-cart">
 									<div className="cart">
-										<h1>1</h1>
+										<h1 >1</h1>
 										<img src="..//img/detailing/detailing2/1.jpg" alt="det1" />
 										<p>
 											На першому етапі відбувається первинна обробка кузова
@@ -249,10 +249,9 @@ const Detailing = () => {
 										випадково; завдяки м'якості вони не пошкоджують покриття
 										авто, не залишають на ньому розводів, ворсинок та інших
 										слідів. Регулярне проведення детейлінг миття збереже
-										лакофарбове покриття автомобіля в ідеальному стані. Ми
-										наполегливо рекомендуємо проводити детейлінг догляд на
-										початку сезону. Особливо це актуально навесні, коли
-										автомобіль потребує очищення від солей та реагентів.
+										лакофарбове покриття автомобіля в ідеальному стані. Особливо
+										це актуально навесні, коли автомобіль потребує очищення від
+										солей та реагентів.
 									</p>
 								</div>
 							</div>
@@ -264,7 +263,7 @@ const Detailing = () => {
 						<div
 							className="fourthPageDet"
 							style={{
-								backgroundImage: 'url("..//img/detailing/detailing4.jpg")',
+								backgroundImage: 'url("..//img/dopposlugy/dopposlugy2.jpg")',
 							}}
 						>
 							<div className="firstPageBox">
@@ -272,10 +271,7 @@ const Detailing = () => {
 									<h1>ПОСЛУГА ХІМЧИСТКИ САЛОНУ АВТО</h1>
 									<div className="conatainer">
 										{" "}
-										<img
-											src="..//img/detailing/detailing4.1.jpg"
-											alt="detailing4.1"
-										/>
+										
 										<p>
 											Хімчистка автомобіля - це процес глибокого очищення всіх
 											поверхонь від різних забруднень, плям і пилу за допомогою
@@ -312,7 +308,7 @@ const Detailing = () => {
 										<li>Професійне чищення шкіряних елементів салону. </li>
 										<li>
 											Очищення текстильних сидінь: обробка мийним засобом,
-											видалення глибоких плям і пилососом.
+											видалення глибоких плям із використанням миючого пилососу.
 										</li>
 										<li>
 											Обов'язкове чищення багажного відділення або ніші із
@@ -325,7 +321,7 @@ const Detailing = () => {
 						</div>
 					</Section>
 				</div>
-				<div ref={section4}>
+				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
 						<Footer />
 					</Section>

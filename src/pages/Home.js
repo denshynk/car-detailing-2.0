@@ -6,12 +6,13 @@ import Footer from "../components/Footer.js";
 import Animation from "../components/Animation.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ setIsActiveLink, handleLinkClick }) => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
-	const section4 = useRef();
+	const lastSection = useRef();
 	gsap.registerPlugin(ScrollTrigger);
 
 	function scrollTo(section) {
@@ -77,7 +78,6 @@ const Home = () => {
 					start: "top center",
 					end: "bottom center",
 				},
-			
 			}
 		);
 	});
@@ -101,7 +101,6 @@ const Home = () => {
 					start: "top center",
 					end: "bottom center",
 				},
-				
 			}
 		);
 	});
@@ -116,6 +115,7 @@ const Home = () => {
 						goToSectionRef={section2}
 					>
 						<div className="mainpage">
+							<div clasname='mainpaeBackGround'></div>
 							<img
 								src={process.env.PUBLIC_URL + "/img/v_9_RGB.svg"}
 								className="animate__animated animate__flash"
@@ -134,35 +134,57 @@ const Home = () => {
 						goToSectionRef={section3}
 					>
 						<div className="secondpage">
-							<div className="pageSlice mt-50">
+							<div className="pageSlice">
 								<h1 className="seconPageText">Auto Safe Culture</h1>
 								{isWideScreen ? (
 									<div className={`image-container`} ref={ImageRef}>
 										<>
 											<div className={`line line1${showLines ? " show" : ""}`}>
 												<div className="lineText">
-													<h2>Автооптика</h2>
+													<Link
+														style={{ textDecoration: "none" }}
+														to="/dodatkoviposlugy"
+													>
+														<h2>Автооптика</h2>
+													</Link>
 												</div>
 											</div>
 											<div className={`line line2${showLines ? " show" : ""}`}>
 												<div className="lineText">
-													<h2>Автозапуск</h2>
+													<Link style={{ textDecoration: "none" }} to="/save">
+														<h2>Автозапуск</h2>
+													</Link>
 												</div>
 											</div>
 
 											<div className={`line line5${showLines ? " show" : ""}`}>
 												<div className="lineText">
-													<h2 className="h22">Тонування </h2>
+													<Link
+														style={{ textDecoration: "none" }}
+														to="/zahysnaplivka"
+													>
+														<h2 className="h22">Тонування </h2>
+													</Link>
 												</div>
 											</div>
 											<div className={`line line6${showLines ? " show" : ""}`}>
 												<div className="lineText">
-													<h2>Шумо-вiбро iзоляція</h2>
+													<Link
+														style={{ textDecoration: "none" }}
+														to="/shumoizol"
+													>
+														<h2>Шумо-вiбро iзоляція</h2>
+													</Link>
 												</div>
 											</div>
 											<div className={`line line7${showLines ? " show" : ""}`}>
 												<div className="lineText">
-													<h2>Системи паркування</h2>
+													<Link
+														style={{ textDecoration: "none" }}
+														to="/dodatkoviposlugy"
+													>
+														<h2>Системи паркування</h2>
+													</Link>
 												</div>
 											</div>
 										</>
@@ -242,25 +264,59 @@ const Home = () => {
 								<h1>AUTO SAFE CULTURE – ВАШ НАДІЙНИЙ ПАРТНЕР!</h1>
 								<p>
 									Автомобільна культура в сучасному світі – це більше, ніж
-									засоби пересування. Це про стиль життя, частину ідентичності
-									та спосіб вираження.
+									засоби пересування. Це про стиль життя, свободу, та спосіб
+									вираження ідентичності. Наша компанія прагне втілити
+									збереження цієї культури через надання послуг вищого класу,
+									які перетворюють авто на справжній витвір мистецтва, шляхом
+									підвищення комфорту та різностороннього захисту автомобіля.
 								</p>
 								<p>
-									Наша компанія прагне втілити цю культуру через надання послуг
-									вищого класу, які перетворюють авто на справжній витвір
-									мистецтва. Ми застосовуємо новітні технології та матеріали для
-									того, щоб ваш автомобіль не лише виглядав неперевершено, а й
-									був захищений на довгі роки.
-								</p>
-								<p>
-									Тому наша студія – це місце, да ваш автомобіль отримає
-									заслужену увагу, а ви – задоволення від кожної подорожі.
+									Ми застосовуємо новітні технології та матеріали для того, щоб
+									ваш автомобіль не лише виглядав неперевершено, а й був
+									захищений на довгі роки. Наша студія – це місце, де ваш
+									транспортний засіб отримає заслужену увагу, а ви – задоволення
+									від кожної подорожі.
 								</p>
 							</div>
 						</div>
 					</Section>
 				</div>
-				<div ref={section4}>
+				<div ref={section3}>
+					<Section
+						showArrow={false}
+						goToSectionRef={section1}
+						scrollTo={scrollTo}
+					>
+						<div className="fourthpage">
+							<div className="Box">
+								<p>
+									Auto Safe Culture - є центром нового покоління по
+									різносторонньому захисту автомобіля та підвищенню комфорту
+									власника. Наша концепція заключається в комплексному підході
+									до питання - від збереження первозданного виду авто та захисту
+									проти викрадення, до підйому рівня комфорту вище чим надає
+									авто виробник.
+								</p>
+								<p>
+									Мета - створити культуру захисту та догляду за автомобілями.
+									Ми прагнемо виховувати у власників авто усвідомлення
+									важливості якісного обслуговування та збереження їхніх
+									транспортних засобів через передові технології, інноваційні
+									рішення та персоналізований підхід. Основа нашої роботи
+									ґрунтується на дбайливому ставленні до безпеки, зовнішнього
+									вигляду та довговічності автомобіля.
+								</p>
+								<p>
+									Погляди нашої команди виражаються у відданості до безпеки та
+									збереження автомобілів, надійності та якості обслуговування, а
+									також унікальному підході до кожного клієнта, спираючись на
+									сучасні технології та персоналізацію.
+								</p>
+							</div>
+						</div>
+					</Section>
+				</div>
+				<div ref={lastSection}>
 					<Footer />
 				</div>
 			</div>

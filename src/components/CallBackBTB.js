@@ -1,6 +1,8 @@
 import React from "react";
 
-function CallBackBTN({ isWideScreen, handleCallBack }) {
+function CallBackBTN({ isWideScreen, handleCallBack}) {
+
+	
 	if (!isWideScreen)
 		return (
 			<>
@@ -9,6 +11,13 @@ function CallBackBTN({ isWideScreen, handleCallBack }) {
 				</div>
 			</>
 		);
-}
+		else {return(
+			<>
+				<div className="callBackBTN">
+					 <button >Зворотній звязок</button> 
+				</div>
+			</>
+		);
+}}
 
 export default CallBackBTN;

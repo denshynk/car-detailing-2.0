@@ -3,18 +3,13 @@ import React, { useState, useEffect, useRef } from "react";
 import Drawer from "./Drawer";
 import Headroom from "react-headroom";
 
-function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop }) {
-	const [isActiveLink, setIsActiveLink] = useState(null);
+function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,setIsActiveLink,handleLinkClick}) {
+	
 
 	const [burgerOpened, setBurgerOpened] = React.useState(false);
 	const [isChecked, setIsChecked] = useState(false);
 
-	const handleLinkClick = (link) => {
-		setIsActiveLink(link);
-		if (link === "/save") {
-		} else {
-		}
-	};
+
 
 	const toggleBasket = () => {
 		setBurgerOpened(!burgerOpened);
@@ -218,7 +213,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop }) {
 								to="/shumoizol"
 								onClick={() => handleLinkClick("/shumoizol")}
 							>
-								Шумо- вiбро iзоляцiя
+								Шумо та вiбро iзоляцiя
 							</Link>
 							<Link
 								className={isActiveLink === "/zahysnaplivka" ? "active" : ""}

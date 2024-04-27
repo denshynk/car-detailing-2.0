@@ -90,8 +90,12 @@ function App() {
 	}, []);
 
 	const location = useLocation();
-
 	const [drawerTop, setDrawerTop] = useState(0);
+
+	const [isActiveLink, setIsActiveLink] = useState(null);
+	const handleLinkClick = (link) => {
+		setIsActiveLink(link);
+	};
 
 	return (
 		<>
@@ -108,6 +112,9 @@ function App() {
 						scrolTo={scrolTo}
 						setDrawerTop={setDrawerTop}
 						drawerTop={drawerTop}
+						isActiveLink={isActiveLink}
+						setIsActiveLink={setIsActiveLink}
+						handleLinkClick={handleLinkClick}
 					/>
 					{/* Устанавливаем top для Drawer с учетом полученной высоты */}
 					<Drawer2
@@ -122,7 +129,15 @@ function App() {
 				</div>
 				<AnimatePresence mode="wait">
 					<Routes location={location} key={location.pathname}>
-						<Route index element={<Home />} />
+						<Route
+							index
+							element={
+								<Home
+									setIsActiveLink={setIsActiveLink}
+									handleLinkClick={handleLinkClick}
+								/>
+							}
+						/>
 						<Route path="/save" element={<Save />} />
 						<Route path="/detailing" element={<Detailing />} />
 						<Route path="/shumoizol" element={<Shumoizol />} />
