@@ -1,21 +1,114 @@
-import React, { useRef } from "react";
+import React, { useRef, useLayoutEffect, useEffect } from "react";
 import Section from "../components/Section.js";
 import styles from "./Container.module.scss";
 import ImageComponent from "../components/ImageComponent";
 import Footer from "../components/Footer.js";
+import Animation from "../components/Animation.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Home = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
 	const section4 = useRef();
+	gsap.registerPlugin(ScrollTrigger);
 
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
+	gsap.registerPlugin(ScrollTrigger);
+	const headlineRef = useRef();
+	useLayoutEffect(() => {
+		gsap.fromTo(
+			headlineRef.current,
+			{
+				opacity: 0,
+				x: 1000,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: headlineRef.current,
+					start: "top center",
+					end: "bottom center",
+
+					duration: 1,
+				},
+			}
+		);
+	});
+
+	const [isWideScreen, setIsWideScreen] = React.useState(
+		window.innerWidth > 600
+	);
+	const [showLines, setShowLines] = React.useState(true);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsWideScreen(window.innerWidth > 600);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	const ImageRef = useRef();
+
+	useLayoutEffect(() => {
+		gsap.fromTo(
+			ImageRef.current,
+			{
+				opacity: 0,
+				x: 1000,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 2,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: ImageRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			
+			}
+		);
+	});
+
+	const ImagePhone = useRef();
+
+	useLayoutEffect(() => {
+		gsap.fromTo(
+			ImagePhone.current,
+			{
+				opacity: 0,
+				y: -1000,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 3,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: ImagePhone.current,
+					start: "top center",
+					end: "bottom center",
+				},
+				
+			}
+		);
+	});
+
 	return (
 		<>
-			<div className={`${styles.container}`}>
+			<div className={`boxik ${styles.container}`}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -23,13 +116,14 @@ const Home = () => {
 						goToSectionRef={section2}
 					>
 						<div className="mainpage">
-							<div className="centerBox">
-								<p>
-									Отримайте більше задоволення від Вашого авто разом з{" "}
-									<b>Apex Safe Car</b>
-								</p>
-								<h1>СУЧАСНА ДEТЕЙЛIНГ СТУДIЯ!</h1>
-							</div>
+							<img
+								src={process.env.PUBLIC_URL + "/img/v_9_RGB.svg"}
+								className="animate__animated animate__flash"
+								alt="Logo"
+								width={"55%"}
+							/>
+
+							<h1>КУЛЬТУРА АВТОБЕЗПЕКИ</h1>
 						</div>
 					</Section>
 				</div>
@@ -40,11 +134,99 @@ const Home = () => {
 						goToSectionRef={section3}
 					>
 						<div className="secondpage">
-							<div className="pageSlice mt-40">
-								<h1>
-									ASC - Apex Safe Car
-								</h1>
-								<ImageComponent />
+							<div className="pageSlice mt-50">
+								<h1 className="seconPageText">Auto Safe Culture</h1>
+								{isWideScreen ? (
+									<div className={`image-container`} ref={ImageRef}>
+										<>
+											<div className={`line line1${showLines ? " show" : ""}`}>
+												<div className="lineText">
+													<h2>Автооптика</h2>
+												</div>
+											</div>
+											<div className={`line line2${showLines ? " show" : ""}`}>
+												<div className="lineText">
+													<h2>Автозапуск</h2>
+												</div>
+											</div>
+
+											<div className={`line line5${showLines ? " show" : ""}`}>
+												<div className="lineText">
+													<h2 className="h22">Тонування </h2>
+												</div>
+											</div>
+											<div className={`line line6${showLines ? " show" : ""}`}>
+												<div className="lineText">
+													<h2>Шумо-вiбро iзоляція</h2>
+												</div>
+											</div>
+											<div className={`line line7${showLines ? " show" : ""}`}>
+												<div className="lineText">
+													<h2>Системи паркування</h2>
+												</div>
+											</div>
+										</>
+
+										<img
+											src="/img/bmw4.png"
+											style={{ width: "80%" }}
+											alt="Описание изображения"
+										/>
+									</div>
+								) : (
+									<div className={`image-container-phone`} ref={ImagePhone}>
+										<>
+											<div
+												className={`line-phone line1-phone${
+													showLines ? " show" : ""
+												}`}
+											>
+												<div className="lineText-phone">
+													<h2>Системи паркування</h2>
+												</div>
+											</div>
+											<div
+												className={`line-phone line2-phone${
+													showLines ? " show" : ""
+												}`}
+											>
+												<div className="lineText-phone">
+													<h2>Шумо-вiбро iзоляція</h2>
+												</div>
+											</div>
+											<div
+												className={`line-phone line3-phone${
+													showLines ? " show" : ""
+												}`}
+											>
+												<div className="lineText-phone">
+													<h2>Тонування</h2>
+												</div>
+											</div>
+
+											<div
+												className={`line-phone line6-phone${
+													showLines ? " show" : ""
+												}`}
+											>
+												<div className="lineText-phone">
+													<h2 className="h22">Автозапуск </h2>
+												</div>
+											</div>
+											<div
+												className={`line-phone line7-phone${
+													showLines ? " show" : ""
+												}`}
+											>
+												<div className="lineText-phone">
+													<h2 className="h22">Автооптика</h2>
+												</div>
+											</div>
+										</>
+
+										<img src="/img/m4.png" alt="Описание изображения" />
+									</div>
+								)}
 							</div>
 						</div>
 					</Section>
@@ -56,39 +238,34 @@ const Home = () => {
 						scrollTo={scrollTo}
 					>
 						<div className="thirdpage">
-							<div className="Box">
-								<h1>Про компанiю</h1>
+							<div className="Box" ref={headlineRef}>
+								<h1>AUTO SAFE CULTURE – ВАШ НАДІЙНИЙ ПАРТНЕР!</h1>
 								<p>
-									Місія нашої компанії полягає в тому, щоб забезпечувати нашим
-									клієнтам реальну користь та надавати найкращий рівень сервісу
-									та задоволеності у нашій сфері.
+									Автомобільна культура в сучасному світі – це більше, ніж
+									засоби пересування. Це про стиль життя, частину ідентичності
+									та спосіб вираження.
 								</p>
 								<p>
-									Ми прагнемо до переваг у всьому, що робимо, і наша мета –
-									стати надійним партнером для всіх наших клієнтів.
+									Наша компанія прагне втілити цю культуру через надання послуг
+									вищого класу, які перетворюють авто на справжній витвір
+									мистецтва. Ми застосовуємо новітні технології та матеріали для
+									того, щоб ваш автомобіль не лише виглядав неперевершено, а й
+									був захищений на довгі роки.
 								</p>
 								<p>
-									З 2019 року ми зробили комфортніше і безпечніше понад 17500
-									автомобілів і практично всі їхні власники залишилися дуже
-									задоволені.
-								</p>
-								<p>
-									Для вас: Гарантія 5 років Збереження гарантії дилера Підтримка
-									на весь період експлуатації Безпека та комфорт Вашого
-									автомобіля – наша турбота!
+									Тому наша студія – це місце, да ваш автомобіль отримає
+									заслужену увагу, а ви – задоволення від кожної подорожі.
 								</p>
 							</div>
 						</div>
 					</Section>
 				</div>
 				<div ref={section4}>
-					
-						<Footer />
-					
+					<Footer />
 				</div>
 			</div>
 		</>
 	);
 };
 
-export default Home;
+export default Animation(Home);

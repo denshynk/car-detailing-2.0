@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import Section from "../components/Section.js";
 import styles from "./Container.module.scss";
 import Footer from "../components/Footer.js";
+import Animation from "../components/Animation.js";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -28,7 +30,12 @@ const Galery = () => {
 	}
 	return (
 		<>
-			<div className={`${styles.container}`}>
+			<div
+				className={`${styles.container} `}
+				style={{
+					backgroundImage: 'url("..//img/galery.jpg")',
+				}}
+			>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -135,4 +142,4 @@ const Galery = () => {
 	);
 };
 
-export default Galery;
+export default Animation(Galery);

@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Michroma", sans-serif;
+}
+
+.loadingPage {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: repeating-linear-gradient(
+			135deg,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			transparent 0px,
+			transparent 1px,
+			hsla(146, 0%, 0%, 0.15) 1px,
+			hsla(146, 0%, 0%, 0.15) 4px,
+			transparent 4px,
+			transparent 5px,
+			hsla(146, 0%, 0%, 0.15) 5px,
+			hsla(146, 0%, 0%, 0.15) 10px
+		),
+		repeating-linear-gradient(
+			45deg,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			transparent 0px,
+			transparent 1px,
+			hsla(146, 0%, 0%, 0.15) 1px,
+			hsla(146, 0%, 0%, 0.15) 4px,
+			transparent 4px,
+			transparent 5px,
+			hsla(146, 0%, 0%, 0.15) 5px,
+			hsla(146, 0%, 0%, 0.15) 10px
+		),
+		repeating-linear-gradient(
+			0deg,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			transparent 0px,
+			transparent 1px,
+			hsla(146, 0%, 0%, 0.15) 1px,
+			hsla(146, 0%, 0%, 0.15) 4px,
+			transparent 4px,
+			transparent 5px,
+			hsla(146, 0%, 0%, 0.15) 5px,
+			hsla(146, 0%, 0%, 0.15) 10px
+		),
+		repeating-linear-gradient(
+			90deg,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			hsla(146, 0%, 0%, 0.15) 0px,
+			transparent 0px,
+			transparent 1px,
+			hsla(146, 0%, 0%, 0.15) 1px,
+			hsla(146, 0%, 0%, 0.15) 4px,
+			transparent 4px,
+			transparent 5px,
+			hsla(146, 0%, 0%, 0.15) 5px,
+			hsla(146, 0%, 0%, 0.15) 10px
+		),
+		linear-gradient(90deg, rgb(60, 60, 60), rgb(60, 60, 60));
+	height: 100%;
+	width: 100%;
+	z-index: 999999999;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	color: #191654;
+}
+
+.animateOut {
+	animation: fadeOut 1s ease-in-out 3.5s forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.svgImage {
+	stroke: white;
+	fill-opacity: 0;
+	stroke-width: 1px;
+	stroke-dasharray: 2000;
+	animation: draw 10s ease;
+}
+
+@keyframes rotateText {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes draw {
+	0% {
+		stroke-dashoffset: 2000;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+.nameContainer {
+	position: absolute;
+	overflow: visible;
+}
+
+.logoName {
+	fill: #fafafa;
+	font-size: 18px;
+
+	letter-spacing: 5px;
+	animation: rotateText 40s linear infinite;
+	text-transform: uppercase;
+	  transform-box: fill-box;
+	transform-origin: center;
+}

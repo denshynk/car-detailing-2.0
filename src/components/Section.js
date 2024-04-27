@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import React from "react";
 import styles from "./FullSections.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Section({
 	scrollTo,
@@ -10,6 +11,7 @@ export default function Section({
 	showArrow,
 	children, // Добавляем свойство children
 }) {
+
 	return (
 		<div className={styles.section}>
 			{children}

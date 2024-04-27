@@ -2,18 +2,131 @@ import React, { useRef } from "react";
 import Section from "../components/Section.js";
 import styles from "./Container.module.scss";
 import Footer from "../components/Footer.js";
+import Animation from "../components/Animation.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const ZahysnaPlivka = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
 	const section4 = useRef();
+	const section5 = useRef();
+	const section6 = useRef();
+	const section7 = useRef();
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
+
+	gsap.registerPlugin(ScrollTrigger);
+	const firstRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			firstRef.current,
+			{
+				opacity: 0,
+				y: 40,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: firstRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const secondtRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			secondtRef.current,
+			{
+				opacity: 0,
+				x: -140,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: secondtRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const thirstRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			thirstRef.current,
+			{
+				opacity: 0,
+				y: -140,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: thirstRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const fourthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fourthRef.current,
+			{
+				opacity: 0,
+				x: 100,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: fourthRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const fifthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fifthRef.current,
+			{
+				opacity: 0,
+				x: 1000,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 2,
+				scrollTrigger: {
+					scroller: ".boxik",
+					trigger: fifthRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
 	return (
 		<>
-			<div className={`${styles.container}`}>
+			<div className={`boxik ${styles.container}`}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -21,40 +134,32 @@ const ZahysnaPlivka = () => {
 						goToSectionRef={section2}
 					>
 						<div
-							className="firstPageTAG"
+							className="firstPagePlivka"
 							style={{
-								backgroundImage: 'url("..//img/cars/4.jpg")',
+								backgroundImage: 'url("..//img/plivka/plivka1.jpg")',
 							}}
 						>
-							<div className="firstPageBox">
+							<div className="firstPageBox" ref={firstRef}>
 								<div className="content">
-									<h1>Обклеювання захисною плівкою</h1>
+									<h1>АВТОМОБІЛЬНА ПЛІВКА</h1>
 									<p>
-										Низька якість дорожнього покриття та наявність на ньому
-										каменів, гравію та інших твердих предметів може призвести до
-										того, що нова автомашина швидко покриється подряпинами, а
-										крихкі деталі – скло, фари – можуть постраждати від ударів
-										каменів, що вилетіли з-під коліс. Впоратися із ситуацією
-										допоможе бронеплівка на автомобіль. Це захисне покриття, яке
-										встановлюється або на окремі елементи автомобіля або на весь
-										транспортний засіб. Воно дозволяє зберегти початковий
-										зовнішній вигляд нової машини та врятує від наслідків
-										небажаних контактів із різними абразивними речовинами, а
-										також камінням, піском та брудом. Міцна захисна плівка на
-										авто - це не просто спосіб запобігання пошкоджень, але і
-										метод надання стильного сучасного вигляду. Це пов'язано з
-										тим, що промисловість пропонує десятки варіантів плівок
-										різної густини, кольору та рівня глянцю.
+										Вона виготовляється з високоякісних матеріалів і захищає від
+										подряпин, каміння, атмосферних впливів та ультрафіолетового
+										випромінювання. Зберігає вигляд авто протягом тривалого
+										періоду; підвищує стійкість лакофарбового покриття. Крім
+										того, автомобільна плівка може бути виготовлена в різних
+										кольорах та дизайнах, щоб задовольнити індивідуальні потреби
+										та естетичні вимоги кожного клієнта. Нанесення плівки
+										проводиться професійними майстрами, що гарантує якість та
+										бездоганний вигляд автомобіля після застосування.
 									</p>
-									<p className="lasttextbox">
-										Міцна антигравійна плівка на нову машину здатна захистити
-										транспортний засіб від ударів дрібних каменів, негативного
-										впливу дорожніх реагентів та недбалих дій під час миття.
-										Вона продовжує блиск та ефектний вигляд фарби на тривалий
-										період.
-									</p>
-								</div>
-								<button onClick={() => scrollTo(section2)}>Детальніше</button>
+
+									<div className="d-flex justify-start flex align-end ">
+										<button onClick={() => scrollTo(section2)}>
+											Детальніше
+										</button>
+									</div>
+								</div>{" "}
 							</div>
 						</div>
 					</Section>
@@ -66,63 +171,34 @@ const ZahysnaPlivka = () => {
 						goToSectionRef={section3}
 					>
 						<div
-							className="secondPageTag"
+							className="secondPagePlivka"
 							style={{
-								backgroundImage: 'url("..//img/cars/3.jpg")',
+								backgroundImage: 'url("..//img/plivka/plivka2.jpg")',
 							}}
 						>
-							<div className="boxContainer">
-								<div className="textConteiner">
-									<h1 style={{ fontSize: "30px" }}>
-										Як користуватися захисною плівкою.
-									</h1>
-									<p>
-										Антигравійна плівка та обклеювання нею транспортного засобу
-										може бути різною. Сама плівка має товщину всього в 150
-										мікрон, вона зовсім непомітна на поверхнях, але робить їх
-										значно міцнішими. Вона може бути глянсовою та матовою,
-										прозорою або чорною. Вибір плівки залежить від того, на які
-										деталі та частини її планується наносити.
-									</p>
-									<p>
-										Обклеювання та бронювання авто поліуретановою плівкою може
-										виконуватися частково або повністю. Залежно від побажання
-										власника і пропонуються такі варіанти:
-									</p>
-									<ul>
-										<li>
-											<p>
-												<b>Стартовий</b> – покриття наноситься на пороги, ручки,
-												передні фари та іншу оптику.
-											</p>
-										</li>
-										<li>
-											<p>
-												<b>Стандарт</b>. Захист використовується для переднього
-												бампера, частково – капота та передніх крил, передніх та
-												протитуманних фар, а також дзеркал та ручок.
-											</p>
-										</li>
-										<li>
-											<p>
-												<b>Стандарт+</b> відрізняється від попереднього варіанта
-												повним покриттям капота.
-											</p>
-										</li>
-										<li>
-											<p>
-												<b>Стандарт ++</b>. В цьому випадку бронеплівка на кузов
-												наклеюється на весь капот і крила.
-											</p>
-										</li>
-										<p>
-											Також можливе використання повного обклеювання автомобіля.
-											В основному це використовується для авто високої цінової
-											категорії, цінних брендів та марок, ремонт яких
-											коштуватиме набагато дорожче, ніж бронювання кузова
-											захисною плівкою.
-										</p>
-									</ul>
+							<div className="firstPageBox" ref={secondtRef}>
+								<div className="containerH1">
+									<h1>ПРОПОНУЄМО ПОСЛУГУ ЗАХИСТУ ЗОВНІШНІХ ЕЛЕМЕНТІВ</h1>
+									<h1>АВТОМОБІЛЯ ЗА ДОПОМОГОЮ ПРОЗОРОЇ ПЛІВКИ</h1>
+									<h1>ТОВЩИНОЮ ВІД 120 ДО 190 МІКРОН</h1>
+								</div>
+								<p>
+									Це актуально для нових, дорогих та автомобілів з вишуканим
+									фарбуванням. Антигравійною плівкою можна захистити кузов
+									повністю або нанести на найбільш вразливі ділянки (фари,
+									бампер, капот, крила, зеркала). Поліуретанова плівка захистить
+									від подряпин та збереже лакофарбове покриття на довгий період.
+								</p>
+							</div>
+							<div className="cart-container">
+								<div className="cart">
+									<h2>НАНОСИТЬСЯ швидко, легко демонтується</h2>
+								</div>
+								<div className="cart">
+									<h2>ЗБЕРІГАЄ авто у первозданному стані</h2>
+								</div>
+								<div className="cart">
+									<h2>ЗАХИЩАЄ авто від сколів</h2>
 								</div>
 							</div>
 						</div>
@@ -134,37 +210,160 @@ const ZahysnaPlivka = () => {
 						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
-						<div className="secondPageTag">
-							<div className="boxContainer">
-								<div className="textConteiner">
-									<p>
-										Щоб виконати покриття авто захисною плівкою, необхідно
-										вирішити, в якому обсязі буде виконуватися нанесення і
-										підібрати необхідний варіант. Цей процес краще довірити
-										професіоналам з профільними знаннями та вміннями, досвідом
-										проведення подібних робіт, а також, якщо вони володіють
-										необхідними інструментами.
-									</p>
-									<p>
-										Майстри Auto Safe Culture з відповідним досвідом роботи
-										підкажуть кращі варіанти захисту транспортного засобу
-										замовника, підберуть оптимальні матеріали та швидко
-										виконають необхідні роботи. Професійне покриття авто
-										захисною поліуретановою плівкою для власника транспортного
-										засобу означає повну безпеку від можливих пошкоджень під час
-										експлуатації, збереження якості та виду лакофарбового шару
-										та металу кузова, прозорості пластику та скла на оптиці,
-										міцності пластикових елементів, а також захист від корозії.
-										Наша компанія ASC гарантує якість та швидкість виконання
-										робіт, відмінні технічні характеристики використовуваних
-										плівок та тривалий термін служби покриття.
-									</p>
+						<div
+							className="thirdPagePlivka"
+							style={{
+								backgroundImage: 'url("..//img/plivka/plivka3.jpg")',
+							}}
+						>
+							<div className="firstPageBox" ref={thirstRef}>
+								<div className="container">
+									<div className="card">
+										<h2>НЕВИДИМА - ОЗНАЧАЄ МІЦНА</h2>
+										<p>
+											Прозора захисна плівка для автомобіля, виготовлена з
+											високоякісного поліуретану, має унікальні властивості,
+											такі як міцність, щільність і еластичність. Це дозволяє
+											плівці ідеально прилягати до будь-яких форм і деталей
+											автомобіля. Кожна покрита частина стає стійкою до впливу
+											гравію, щебеню та піску. Через ці унікальні властивості,
+											ця захисна плівка також відома як антигравійна.
+										</p>
+									</div>
+									<div className="card">
+										<h2>ЛЕГКІСТЬ ТА ЗРУЧНІСТЬ</h2>
+										<p>
+											Високі характеристики захисної плівки для автомобілів
+											забезпечують не лише його легке обслуговування і очищення,
+											але й можливість полірування. У разі аварійної ситуації,
+											такої як пошкодження фари, ця антигравійна плівка утримає
+											скляні уламки на своїй поверхні, запобігаючи їх розлетінню
+											і тим самим захищаючи інші автомобілі від можливих
+											пошкоджень.
+										</p>
+									</div>
+									<div className="card">
+										<h2>ЕСТЕТИЧНИЙ ЗАХИСТ</h2>
+										<p>
+											Зовнішній вигляд автомобіля з захисною плівкою майже не
+											відрізняється від тих, що не мають такого захисту. Прозора
+											плівка додає естетики, забезпечуючи ще більш гладкий
+											глянцевий ефект. Під час виробництва антигравійної
+											захисної плівки, розплавлена вінілова маса наноситься на
+											паперову основу, від якої залежить фактура майбутньої
+											плівки.
+										</p>
+									</div>
+									<div className="card">
+										<h2>ВАРТІСТЬ І ЧАС ВСТАНОВЛЕННЯ</h2>
+										<p>
+											Обклеювання автомобіля захисною плівкою в нашій
+											автомайстерні може виконуватися як частково, так і
+											повністю. Повне обклеювання поверхні авто проводиться в
+											середньому два дні, а ціна на такий вид робіт набагато
+											нижча за перефарбування кузова.
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</Section>
 				</div>
 				<div ref={section4}>
+					<Section
+						showArrow={false}
+						goToSectionRef={section4}
+						scrollTo={scrollTo}
+					>
+						<div
+							className="fourthPagePlivka"
+							style={{
+								backgroundImage: 'url("..//img/plivka/plivka4.jpg")',
+							}}
+						>
+							<div className="firstPageBox" ref={fourthRef}>
+								<div className="text">
+									<h1>ТОНУВАННЯ СКЛА</h1>
+									<p>
+										Тонування скла є найпопулярнішою послугою з тюнінгу
+										автомобіля в нашій автомайстерні. Цей вид робіт
+										характеризується мінімальними витратами, а також простотою
+										та швидкістю установки. Тонування за допомогою плівки не
+										вимагає демонтажу скла, що значно скорочує час роботи, а
+										також зменшує ризик отримання подряпин та дрібних пошкоджень
+										під час експлуатації автомобіля, що рухається.
+									</p>
+								</div>
+								<div className="container">
+									<div className="card">
+										<img src="..//img/plivka/plivka4/1.jpg" alt="car1" />
+									</div>
+									<div className="card">
+										<img src="..//img/plivka/plivka4/2.jpg" alt="car2" />
+									</div>
+									<div className="card">
+										<img src="..//img/plivka/plivka4/3.jpg" alt="car3" />
+									</div>
+									<div className="card">
+										<img src="..//img/plivka/plivka4/4.jpg" alt="car4" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</Section>
+				</div>
+				<div ref={section5}>
+					<Section
+						showArrow={false}
+						goToSectionRef={section4}
+						scrollTo={scrollTo}
+					>
+						<div
+							className="thirdPagePlivka"
+							style={{
+								backgroundImage: 'url("..//img/plivka/plivka5.jpg")',
+							}}
+						>
+							<div className="firstPageBox " ref={fifthRef}>
+								<h1 className="d-flex ">ПЕРЕВАГИ ТОНУВАННЯ</h1>
+								<div className="container">
+									<div className="card">
+										<h2>ПОЛІПШЕННЯ ЗОВНІШНЬОГО ВИГЛЯДУ:</h2>
+										<p>
+											правильно підібране тонування скла найкраще підкреслить
+											особливості дизайну транспортного засобу, надаючи
+											індивідуального характеру рисам автомобіля.
+										</p>
+									</div>
+									<div className="card">
+										<h2>ЗАХИСТ ВІД НАГРІВАННЯ САЛОНУ ТА ЗУСТРІЧНИХ ФАР: </h2>
+										<p>
+											плівка зменшить вплив жарких сонячних променів та
+											убезпечить очі водія від яскравих фар зустрічних авто.
+										</p>
+									</div>
+									<div className="card">
+										<h2>ЗБЕРЕЖЕННЯ ЗОВНІШНЬОГО ВИГЛЯДУ:</h2>
+										<p>
+											тонування дозволить склу залишатися в ідеальному стані
+											протягом усього терміну експлуатації, захистивши поверхню
+											від подряпин і сколів.
+										</p>
+									</div>
+									<div className="card">
+										<h2>НЕПОМІТНІСТЬ ВОДІЯ ТА ПАСАЖИРІВ:</h2>
+										<p>
+											тонувальна плівка захистить від зайвих поглядів,
+											забезпечивши додатковий комфорт у салоні, а також приховає
+											від очей речі, залишені в автомобілі.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</Section>
+				</div>
+				<div ref={section6}>
 					<Section showArrow={false} goToSectionRef={section1}>
 						<Footer />
 					</Section>
@@ -174,4 +373,4 @@ const ZahysnaPlivka = () => {
 	);
 };
 
-export default ZahysnaPlivka;
+export default Animation(ZahysnaPlivka);

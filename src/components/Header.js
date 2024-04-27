@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Drawer from "./Drawer";
+import Headroom from "react-headroom";
 
-function Header() {
+function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop }) {
 	const [isActiveLink, setIsActiveLink] = useState(null);
-	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 750);
+
 	const [burgerOpened, setBurgerOpened] = React.useState(false);
 	const [isChecked, setIsChecked] = useState(false);
 
@@ -20,76 +21,91 @@ function Header() {
 		document.body.style.overflow = burgerOpened ? "auto" : "hidden";
 		setIsChecked(!isChecked);
 	};
-
 	const hadleClickHome = () => {
-
 		setIsActiveLink(null);
 	};
 
-	const scrolTo = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	}
+	const headerRef = useRef(null);
 
 	useEffect(() => {
-		const handleResize = () => {
-			setIsWideScreen(window.innerWidth > 750);
+		// Получаем высоту Header после рендеринга и обновляем drawerTop
+		const updateDrawerTop = () => {
+			if (headerRef.current) {
+				const headerHeight = headerRef.current.offsetHeight;
+				// Устанавливаем высоту Header в состояние
+				setDrawerTop(headerHeight);
+			}
 		};
 
-		window.addEventListener("resize", handleResize);
+		// Вызываем функцию обновления высоты при монтировании компонента и при изменении ширины экрана
+		updateDrawerTop();
+		window.addEventListener("resize", updateDrawerTop);
 
+		// Отписываемся от обновления при размонтировании компонента
 		return () => {
-			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("resize", updateDrawerTop);
 		};
-	}, []);
+	}, [headerRef]);
+
 
 	if (!isWideScreen) {
 		return (
 			<>
-				<div className="header">
-					<div className="stuctureHeader d-flex justify-between">
-						<Link to="/" onClick={() => { hadleClickHome(); scrolTo();}}>
-							<img
-								src="/img/Logo/ASC_logo_бiлий_на_прозорому_фонi.svg"
-								className="animate__animated animate__flash"
-								alt="Logo"
-								width={"50px"}
-							/>
-						</Link>
-						<div class="hamburger">
-							<input
-								className="checkbox"
-								type="checkbox"
-								onClick={toggleBasket}
-								checked={isChecked}
-								onChange={() => setIsChecked(!isChecked)}
-							/>
-							<svg fill="none" viewBox="0 0 50 50" height="50" width="50">
-								<path
-									class="lineTopHamburger lineHamburger"
-									stroke-linecap="round"
-									stroke-width="4"
-									stroke="white"
-									d="M6 11L44 11"
-								></path>
-								<path
-									stroke-linecap="round"
-									stroke-width="4"
-									stroke="white"
-									d="M6 24H43"
-									class="lineMidHamburger lineHamburger"
-								></path>
-								<path
-									stroke-linecap="round"
-									stroke-width="4"
-									stroke="white"
-									d="M6 37H43"
-									class="lineBottomHamburger lineHamburger"
-								></path>
-							</svg>
+				<Headroom>
+					<div className="header" ref={headerRef}>
+						<div className="stuctureHeader d-flex justify-between">
+							<Link
+								to="/"
+								onClick={() => {
+									hadleClickHome();
+									scrolTo();
+								}}
+							>
+								<img
+									src={process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"}
+									className="animate__animated animate__flash"
+									alt="Logo"
+									width={"100px"}
+								/>
+							</Link>
+							<div className="hamburger">
+								<input
+									className="checkbox"
+									type="checkbox"
+									onClick={toggleBasket}
+									checked={isChecked}
+									onChange={() => setIsChecked(!isChecked)}
+								/>
+								<svg fill="none" viewBox="0 0 50 50" height="40" width="40">
+									<path
+										className="lineTopHamburger lineHamburger"
+										strokeLinecap="round"
+										strokeWidth="4"
+										stroke="white"
+										d="M6 11L44 11"
+									></path>
+									<path
+										strokeLinecap="round"
+										strokeWidth="4"
+										stroke="white"
+										d="M6 24H43"
+										className="lineMidHamburger lineHamburger"
+									></path>
+									<path
+										strokeLinecap="round"
+										strokeWidth="4"
+										stroke="white"
+										d="M6 37H43"
+										className="lineBottomHamburger lineHamburger"
+									></path>
+								</svg>
+							</div>
 						</div>
 					</div>
-				</div>
+				</Headroom>
+
 				<Drawer
+					drawerTop={drawerTop}
 					opened={burgerOpened}
 					handleLinkClick={handleLinkClick}
 					isActiveLink={isActiveLink}
@@ -102,41 +118,93 @@ function Header() {
 	}
 
 	return (
-		<div className="header">
+		<div className="header" ref={headerRef}>
 			<div className="stuctureHeader">
 				<Link to="/" onClick={() => hadleClickHome()}>
 					<img
-						src="/img/Logo/ASC_logo_бiлий_на_прозорому_фонi.svg"
+						src={process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"}
 						className="animate__animated animate__flash"
 						alt="Logo"
-						width={"75px"}
+						width={"22%"}
 					/>
 				</Link>
 
 				<div className="d-flex flex-column w100p justify-around ">
 					<div className="d-flex justify-end ">
 						<div className=" contact">
-							<img
-								width={"30px"}
-								height={"30px"}
-								src={process.env.PUBLIC_URL + "/img/Maps.png"}
-								alt="Maps"
-							/>
-							<img
-								width={"30px"}
-								height={"30px"}
-								src={process.env.PUBLIC_URL + "/img/Telegram.svg"}
-								alt="Telegram"
-							/>
-							<img
-								width={"30px"}
-								height={"30px"}
-								src={process.env.PUBLIC_URL + "/img/Viber.png"}
-								alt="Viber"
-							/>
+							<a
+								className="d-flex"
+								style={{ width: "20px" }}
+								href="https://g.co/kgs/HgQFxDY"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									width="20px"
+									height="20px"
+									src={process.env.PUBLIC_URL + "/img/Maps.png"}
+									alt="Maps"
+								/>
+							</a>
+
+							<a
+								className="d-flex"
+								style={{ width: "20px" }}
+								href="https://t.me/AutoSafeCulture"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									width={"20px"}
+									height={"20px"}
+									src={process.env.PUBLIC_URL + "/img/Telegram.svg"}
+									alt="Telegram"
+								/>
+							</a>
+							<a
+								className="d-flex"
+								style={{ width: "20px" }}
+								href="tel:+380730040066"
+								rel="noopener noreferrer"
+							>
+								<img
+									width={"20px"}
+									height={"20px"}
+									src={process.env.PUBLIC_URL + "/img/Viber.png"}
+									alt="Viber"
+								/>
+							</a>
+							<a
+								className="d-flex"
+								style={{ width: "20px" }}
+								href="https://www.instagram.com/auto.safe.culture?igsh=MTBoa2xqcXdiN3ZjMg=="
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									width={"20px"}
+									height={"20px"}
+									src={process.env.PUBLIC_URL + "/img/instagram.png"}
+									alt="Inst"
+								/>
+							</a>
+							<a
+								className="d-flex"
+								style={{ width: "20px" }}
+								href="https://www.instagram.com/auto.safe.culture?igsh=MTBoa2xqcXdiN3ZjMg=="
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									width={"20px"}
+									height={"20px"}
+									src={process.env.PUBLIC_URL + "/img/tik-tok.png"}
+									alt="TikTok"
+								/>
+							</a>
 						</div>
 					</div>
-					<div className=" d-flex justify-end ">
+					<div className=" d-flex justify-end">
 						<div className="containerAch">
 							<Link
 								className={isActiveLink === "/save" ? "active" : ""}
@@ -160,11 +228,25 @@ function Header() {
 								Захисна плiвка i тонування
 							</Link>
 							<Link
+								className={isActiveLink === "/dodatkoviposlugy" ? "active" : ""}
+								to="/dodatkoviposlugy"
+								onClick={() => handleLinkClick("/dodatkoviposlugy")}
+							>
+								Додаткове обладнання
+							</Link>
+							<Link
 								className={isActiveLink === "/detailing" ? "active" : ""}
 								to="/detailing"
 								onClick={() => handleLinkClick("/detailing")}
 							>
 								Детейлiнг
+							</Link>
+							<Link
+								className={isActiveLink === "/faq" ? "active" : ""}
+								to="/faq"
+								onClick={() => handleLinkClick("/faq")}
+							>
+								Питання відповідь
 							</Link>
 							<Link
 								className={isActiveLink === "/galery" ? "active" : ""}

@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
 	faMapMarkerAlt,
@@ -33,8 +34,8 @@ function Footer() {
 	}, []);
 
 	const handleChange = (e) => {
-		const { placeholder, value } = e.target;
-		setFormData({ ...formData, [placeholder]: value });
+		const { placeholder, value } = e.target; // Исправлено использование placeholder на name
+		setFormData({ ...formData, [placeholder]: value }); // Исправлено использование placeholder на name
 	};
 
 	const handleSubmit = async (e) => {
@@ -42,35 +43,23 @@ function Footer() {
 
 		if (formData.phoneNumber && formData.firstName) {
 			try {
-				// Отправка данных на сервер
-				const response = await fetch("YOUR_SERVER_ENDPOINT", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(formData),
+				console.log(formData);
+				const response = await axios.post(
+					"https://server.autosafeculture.com/callBack",
+					formData
+				);
+				setFormData({
+					firstName: "",
+					phoneNumber: "",
+					email: "",
+					comment: "",
 				});
-
-				// Проверка статуса ответа
-				if (response.ok) {
-					// Если запрос прошел успешно, очистите поля формы
-					setFormData({
-						firstName: "",
-						phoneNumber: "",
-						email: "",
-						coment: "",
-					});
-					alert("Данные успешно отправлены!");
-				} else {
-					alert("Произошла ошибка при отправке данных на сервер.");
-				}
 			} catch (error) {
-				console.error("Ошибка при отправке данных на сервер:", error);
-				alert("Произошла ошибка при отправке данных на сервер.");
+				console.error("Error:", error);
 			}
 		} else {
 			alert(
-				"Пожалуйста, заполните все поля, или проверьте правильность написанного номера. Записывайте номер с +380"
+				"Пожалуйста, заполните все поля, или проверьте правильность написанного номера."
 			);
 		}
 	};
@@ -81,8 +70,8 @@ function Footer() {
 					<div className="CallBackBlock">
 						<div className="LastBox">
 							<div className="flex-box">
-								<h1 className="mt-50">Зворотній звязок</h1>
-								<div className="form__group field">
+								<h1 className="">Зворотній звязок</h1>
+								<div className="form__group field mt-0 p-0">
 									<input
 										type="text"
 										className="form__field"
@@ -141,88 +130,87 @@ function Footer() {
 						<div className="footer-container">
 							<div className="footer-cta pt-5 pb-5">
 								<div className="row">
-									<div className="col-xl-4 col-md-4 mb-30">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faMapMarkerAlt} />
-											<div className="cta-text">
-												<h4>Знайти нас</h4>
-												<span>1010 Avenue, sw 54321, chandigarh</span>
+									<a
+										className="d-flex"
+										style={{ textDecoration: "none" }}
+										href="https://g.co/kgs/HgQFxDY"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<div className="col-xl-4 col-md-4 mb-30">
+											<div className="single-cta">
+												<FontAwesomeIcon icon={faMapMarkerAlt} />
+
+												<div className="cta-text">
+													<h4>Знайти нас</h4>
+													<span>
+														вулиця Вінстона Черчилля, 46г, Київ, 02094
+													</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div className="col-xl-4 col-md-4 mb-30">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faPhone} />
-											<div className="cta-text">
-												<h4>Телефонуйте</h4>
-												<span>+3800977777777</span>
+									</a>
+									<a
+										href="tel:+380730040066"
+										style={{ textDecoration: "none" }}
+									>
+										<div className="col-xl-4 col-md-4 mb-30">
+											<div className="single-cta">
+												<FontAwesomeIcon icon={faPhone} />
+
+												<div className="cta-text">
+													<h4>Телефонуйте</h4>
+													<span className="nowrap">+38 073 004 0066</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div className="col-xl-4 col-md-4 mb-30">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faEnvelopeOpen} />
-											<div className="cta-text">
-												<h4>Пишіть</h4>
-												<span>mail@info.com</span>
+									</a>
+									<a
+										href="mailto:autosafeculture@gmail.com"
+										style={{ textDecoration: "none" }}
+									>
+										<div className="col-xl-4 col-md-4 mb-30">
+											<div className="single-cta">
+												<FontAwesomeIcon icon={faEnvelopeOpen} />
+												<div className="cta-text">
+													<h4>Пишіть</h4>
+													<span>autosafeculture@gmail.com</span>
+												</div>
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</div>
-							<div className="footer-content pt-5 pb-5">
-								<div className="row">
-									<div className="col-xl-4 col-lg-4 mb-50">
-										<div className="footer-widget d-flex mr-50">
-											<div className="footer-logo w100p">
+							<div
+								className="footer-content pt-5 pb-5"
+								style={{ height: "30vh" }}
+							>
+								<div className="rower">
+									<div className="col-xl-4 col-lg-4 ">
+										<div className="footer-widget d-flex">
+											<div className="footer-logo">
 												<a href="/">
 													<img
-														src="/img/Logo/ASC_logo_бiлий_на_прозорому_фонi.svg"
+														src={
+															process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"
+														}
 														className="img-fluid"
 														alt="logo"
+														style={{ maxWidth: "40%" }}
 													/>
 												</a>
 											</div>
 											<div className="footer-text">
 												<p>
-													З 2019 року ми зробили комфортніше і безпечніше понад
-													17500 автомобілів і практично всі їхні власники
-													залишилися дуже задоволені.
+													Реалізація комплексних проєктів з дотриманням високих
+													стандартів якості Створення провідної мережі та підхід
+													до поняття автобезпеки як до культури, зібравши
+													результати напрацювань даної галузі у нашій студії
+													Націленість на індивідуальний підхід до автомобілів та
+													їх власників
 												</p>
 											</div>
 										</div>
-									</div>
-									<div className="col-xl-4 col-lg-4 col-md-6 mb-30">
-										<div className="footer-widget">
-											<div className="footer-widget-heading">
-												<h3>Сторінки</h3>
-											</div>
-											<ul>
-												<li>
-													<Link to="/">Головна</Link>
-												</li>
-												<li>
-													<Link to="/save">Захист вiд викрадення</Link>
-												</li>
-												<li>
-													<Link to="/shumoizol">Шумо- вiбро iзоляцiя</Link>
-												</li>
-												<li>
-													<Link to="/zahysnaplivka">
-														Захисна плiвка i тонуванн
-													</Link>
-												</li>
-												<li>
-													<Link to="/detailing">Детейлiнг</Link>
-												</li>
-												<li>
-													<Link to="/galery">Галерея</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div className="col-xl-4 col-lg-4 col-md-6 mb-50">
-										<div className="footer-widget"></div>
 									</div>
 								</div>
 							</div>
@@ -235,157 +223,91 @@ function Footer() {
 		return (
 			<>
 				<Section>
-					<div className="LastPagepage" >
-						<div
-							className="CallBackBlock "
-							style={{ height: "100vh", marginTop: "-25px" }}
-						>
-							<div className="LastBox" style={{ left: "5%", width: "80%" }}>
-								<div className="flex-box" style={{ marginTop: "0px" }}>
-									<h1 className="" style={{ fontSize: "4vh" }}>
-										Зворотній звязок
-									</h1>
-									<div className="form__group field">
-										<input
-											type="text"
-											className="form__field"
-											placeholder="firstName"
-											required=""
-											value={formData.firstName}
-											onChange={handleChange}
-										/>
-										<label htmlFor="name" className="form__label">
-											Ваше ім’я *
-										</label>
-									</div>
-									<div className="form__group field">
-										<input
-											type="text"
-											className="form__field"
-											placeholder="phoneNumber"
-											required=""
-											onChange={handleChange}
-										/>
-										<label htmlFor="name" className="form__label">
-											Контактний номер *
-										</label>
-									</div>
-									<div className="form__group field">
-										<input
-											type="text"
-											className="form__field"
-											placeholder="email"
-											required=""
-											onChange={handleChange}
-										/>
-										<label htmlFor="name" className="form__label">
-											Ел. пошта
-										</label>
-									</div>
-									<div className="form__group field">
-										<input
-											type="input"
-											className="form__field"
-											placeholder="coment"
-											required=""
-											onChange={handleChange}
-										/>
-										<label htmlFor="name" className="form__label">
-											Коментар
-										</label>
-									</div>
-									<button className="btn" style={{}} onClick={handleSubmit}>
-										Зворотній звязок
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</Section>
-				<Section>
-					<footer className="footer-section" style={{ height: "100vh" }}>
+					<footer className="footer-section d-flex" style={{ height: "100vh" }}>
 						<div className="footer-container ">
 							<div className="footer-cta ">
-								<div className="d-flex justify-center"><div className="row">
-									<div className="col-xl-4 col-md-4">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faMapMarkerAlt} />
-											<div className="cta-text">
-												<h4>Знайти нас</h4>
-												<span>Єреванська 12</span>
+								<div className="d-flex justify-center">
+									<div className="row d-flex">
+										<a
+											className="d-flex"
+											style={{ textDecoration: "none" }}
+											href="https://g.co/kgs/HgQFxDY"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<div className="col-xl-4 col-md-4">
+												<div className="single-cta">
+													<FontAwesomeIcon icon={faMapMarkerAlt} />
+													<div className="cta-text">
+														<h4>Знайти нас</h4>
+														<span>
+															вулиця Вінстона Черчилля, 46г, Київ, 02094
+														</span>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div className="col-xl-4 col-md-4 mb-5">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faPhone} />
-											<div className="cta-text">
-												<h4>Телефонуйте</h4>
-												<span>+3800977777777</span>
+										</a>
+										<a
+											href="tel:+380730040066"
+											style={{ textDecoration: "none" }}
+										>
+											<div className="col-xl-4 col-md-4 mb-5">
+												<div className="single-cta">
+													<FontAwesomeIcon icon={faPhone} />
+													<div className="cta-text">
+														<h4>Телефонуйте</h4>
+														<span>+38 073 004 0066</span>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div className="col-xl-4 col-md-4 mb-5">
-										<div className="single-cta">
-											<FontAwesomeIcon icon={faEnvelopeOpen} />
-											<div className="cta-text">
-												<h4>Пишіть</h4>
-												<span>mail@info.com</span>
+										</a>
+										<a
+											href="mailto:autosafeculture@gmail.com"
+											style={{ textDecoration: "none" }}
+										>
+											<div className="col-xl-4 col-md-4 mb-5">
+												<div className="single-cta">
+													<FontAwesomeIcon icon={faEnvelopeOpen} />
+													<div className="cta-text">
+														<h4>Пишіть</h4>
+														<span>autosafeculture@gmail.com</span>
+													</div>
+												</div>
 											</div>
-										</div>
+										</a>
 									</div>
-								</div></div>
+								</div>
 							</div>
 							<div className="footer-content pt-5 pb-5">
-								<div className="row ">
+								<div className="rower d-flex justify-between">
 									<div className="col-xl-4 col-lg-4 mb-0">
 										<div className="footer-widget d-flex mb-0">
-											<div className="footer-logo  w100p mb-0 mr-40">
+											<div className="footer-logo  w100p mb-0 ">
 												<a href="/">
 													<img
-														src="/img/Logo/ASC_logo_бiлий_на_прозорому_фонi.svg"
+														src={
+															process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"
+														}
 														className="img-fluid"
 														alt="logo"
+														style={{ maxWidth: "50%" }}
 													/>
 												</a>
 											</div>
 											<div className="footer-text ">
 												<p>
-													З 2019 року ми зробили комфортніше і безпечніше понад
-													17500 автомобілів і практично всі їхні власники
-													залишилися дуже задоволені.
+													Реалізація комплексних проєктів з дотриманням високих
+													стандартів якості Створення провідної мережі та підхід
+													до поняття автобезпеки як до культури, зібравши
+													результати напрацювань даної галузі у нашій студії
+													Націленість на індивідуальний підхід до автомобілів та
+													їх власників
 												</p>
 											</div>
 										</div>
 									</div>
 									<div className="col-xl-4 col-lg-4 col-md-6">
-										<div className="footer-widget">
-											<div className="footer-widget-heading">
-												<h3>Сторінки</h3>
-											</div>
-											<ul>
-												<li>
-													<Link to="/">Головна</Link>
-												</li>
-												<li>
-													<Link to="/save">Захист вiд викрадення</Link>
-												</li>
-												<li>
-													<Link to="/shumoizol">Шумо- вiбро iзоляцiя</Link>
-												</li>
-												<li>
-													<Link to="/zahysnaplivka">
-														Захисна плiвка i тонуванн
-													</Link>
-												</li>
-												<li>
-													<Link to="/detailing">Детейлiнг</Link>
-												</li>
-												<li>
-													<Link to="/galery">Галерея</Link>
-												</li>
-											</ul>
-										</div>
+										
 									</div>
 									<div className="col-xl-4 col-lg-4 col-md-6 mb-50">
 										<div className="footer-widget"></div>

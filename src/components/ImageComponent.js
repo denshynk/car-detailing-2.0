@@ -1,27 +1,41 @@
 // ImageComponent.js
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const ImageComponent = ({ showImageComponent }) => {
 	const [showImage, setShowImage] = useState(false);
 	const [showLines, setShowLines] = useState(false);
-	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 750);
-	const [burgerOpened, setBurgerOpened] = React.useState(false);
+	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
 
 	const headlineRef = useRef();
+	gsap.registerPlugin(ScrollTrigger);
+	useLayoutEffect(() => {
+		gsap.fromTo(
+			".image-container",
+			{
+				opacity: 0,
+				x: 1000,
+			},
+			{
+				opacity: 1,
+				x: 0,
 
-	const openBurger = () => {
-		setBurgerOpened(true);
-		document.body.style.overflow = "hidden"; // Запретить скролл body
-	};
-
-	const closeBurger = () => {
-		setBurgerOpened(false);
-		document.body.style.overflow = "auto"; // Включить скролл body
-	};
+				scrollTrigger: {
+					scroller: ".image-container",
+					trigger: ".image-container",
+					start: "top center",
+					end: "bottom center",
+					markers: true,
+					duration: 50,
+				},
+			}
+		);
+	});
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsWideScreen(window.innerWidth > 750);
+			setIsWideScreen(window.innerWidth > 600);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -44,26 +58,41 @@ const ImageComponent = ({ showImageComponent }) => {
 	}, [showImageComponent]);
 
 	return isWideScreen ? (
-		<div className={`image-container ${showImage ? "show" : ""}`}>
+		<div className={`image-container`}>
 			<>
 				<div className={`line line1${showLines ? " show" : ""}`}>
 					<div className="lineText">
-						<h2>Автозапуск</h2>
+						<h2>Автооптика</h2>
 					</div>
 				</div>
 				<div className={`line line2${showLines ? " show" : ""}`}>
 					<div className="lineText">
-						<h2>Сигналізація</h2>
+						<h2>Автозапуск</h2>
 					</div>
 				</div>
-				<div className={`line line3${showLines ? " show" : ""}`}>
+				{/* <div className={`line line3${showLines ? " show" : ""}`}>
 					<div className="lineText">
-						<h2>Тонування</h2>
+						<h2>Сигналізація</h2>
 					</div>
 				</div>
 				<div className={`line line4${showLines ? " show" : ""}`}>
 					<div className="lineText">
-						<h2 className="h22">Шумо-вiбро iзоляція </h2>
+						<h2>Дотягувач дверей</h2>
+					</div>
+				</div> */}
+				<div className={`line line5${showLines ? " show" : ""}`}>
+					<div className="lineText">
+						<h2 className="h22">Тонування </h2>
+					</div>
+				</div>
+				<div className={`line line6${showLines ? " show" : ""}`}>
+					<div className="lineText">
+						<h2>Шумо-вiбро iзоляція</h2>
+					</div>
+				</div>
+				<div className={`line line7${showLines ? " show" : ""}`}>
+					<div className="lineText">
+						<h2>Системи паркування</h2>
 					</div>
 				</div>
 			</>
@@ -79,12 +108,12 @@ const ImageComponent = ({ showImageComponent }) => {
 			<>
 				<div className={`line-phone line1-phone${showLines ? " show" : ""}`}>
 					<div className="lineText-phone">
-						<h2>Автозапуск</h2>
+						<h2>Системи паркування</h2>
 					</div>
 				</div>
 				<div className={`line-phone line2-phone${showLines ? " show" : ""}`}>
 					<div className="lineText-phone">
-						<h2>Сигналізація</h2>
+						<h2>Шумо-вiбро iзоляція</h2>
 					</div>
 				</div>
 				<div className={`line-phone line3-phone${showLines ? " show" : ""}`}>
@@ -92,9 +121,24 @@ const ImageComponent = ({ showImageComponent }) => {
 						<h2>Тонування</h2>
 					</div>
 				</div>
-				<div className={`line-phone line4-phone${showLines ? " show" : ""}`}>
+				{/* <div className={`line-phone line4-phone${showLines ? " show" : ""}`}>
 					<div className="lineText-phone">
-						<h2 className="h22">Шумо-вiбро iзоляція </h2>
+						<h2 className="h22">Дотягувач дверей</h2>
+					</div>
+				</div>
+				<div className={`line-phone line5-phone${showLines ? " show" : ""}`}>
+					<div className="lineText-phone">
+						<h2 className="h22">Сигналізація</h2>
+					</div>
+				</div> */}
+				<div className={`line-phone line6-phone${showLines ? " show" : ""}`}>
+					<div className="lineText-phone">
+						<h2 className="h22">Автозапуск </h2>
+					</div>
+				</div>
+				<div className={`line-phone line7-phone${showLines ? " show" : ""}`}>
+					<div className="lineText-phone">
+						<h2 className="h22">Автооптика</h2>
 					</div>
 				</div>
 			</>
