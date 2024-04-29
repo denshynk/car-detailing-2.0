@@ -1,7 +1,6 @@
 import React, { useRef, useLayoutEffect, useEffect } from "react";
 import Section from "../components/Section.js";
 import styles from "./Container.module.scss";
-import ImageComponent from "../components/ImageComponent";
 import Footer from "../components/Footer.js";
 import Animation from "../components/Animation.js";
 import { gsap } from "gsap";
@@ -173,7 +172,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 														style={{ textDecoration: "none" }}
 														to="/shumoizol"
 													>
-														<h2>Шумо-вiбро iзоляція</h2>
+														<h2>Шумо та вiбро iзоляція</h2>
 													</Link>
 												</div>
 											</div>
@@ -204,7 +203,12 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-													<h2>Системи паркування</h2>
+												<Link
+														style={{ textDecoration: "none" , color:'#fafafa' }}
+														to="/dodatkoviposlugy"
+													>
+														<h2>Системи паркування</h2>
+													</Link>
 												</div>
 											</div>
 											<div
@@ -213,7 +217,12 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-													<h2>Шумо-вiбро iзоляція</h2>
+												<Link
+														style={{ textDecoration: "none", color:'#fafafa'  }}
+														to="/shumoizol"
+													>
+														<h2>Шумо та вiбро iзоляція</h2>
+													</Link>
 												</div>
 											</div>
 											<div
@@ -222,7 +231,12 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-													<h2>Тонування</h2>
+												<Link
+														style={{ textDecoration: "none", color:'#fafafa'  }}
+														to="/zahysnaplivka"
+													>
+														<h2 className="h22">Тонування </h2>
+													</Link>
 												</div>
 											</div>
 
@@ -232,7 +246,9 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-													<h2 className="h22">Автозапуск </h2>
+												<Link style={{ textDecoration: "none" , color:'#fafafa' }} to="/save">
+														<h2>Автозапуск</h2>
+													</Link>
 												</div>
 											</div>
 											<div
@@ -241,7 +257,12 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-													<h2 className="h22">Автооптика</h2>
+												<Link
+														style={{ textDecoration: "none", color:'#fafafa' }}
+														to="/dodatkoviposlugy"
+													>
+														<h2>Автооптика</h2>
+													</Link>
 												</div>
 											</div>
 										</>

@@ -105,7 +105,7 @@ const DopPoslugy = () => {
 						<div
 							className="secondPageDopposugy"
 							style={{
-								backgroundImage: 'url("..//img/dopposlugy/dopposlugy3.jpg")',
+								backgroundImage: 'url("..//img/dopposlugy/dopposlugy4.jpg")',
 							}}
 						>
 							<div className="firstPageBox" ref={secondtRef}>

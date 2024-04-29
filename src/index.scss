@@ -187,8 +187,6 @@ code {
 // }
 @media (min-width: 900px) {
 	.mainpage {
-		
-		
 		img {
 			width: 45%;
 		}
@@ -207,14 +205,12 @@ code {
 			width: 40%;
 		}
 		h1 {
-
 			position: absolute;
 			top: 75%;
 			display: flex;
 			justify-content: center;
 		}
 	}
-	
 }
 
 // @media (max-width: 1000px) {
@@ -271,7 +267,7 @@ code {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+
 	flex-direction: column;
 	img {
 	}
@@ -506,7 +502,7 @@ code {
 		-moz-animation: AnimationName 0s ease infinite;
 		-o-animation: AnimationName 0s ease infinite;
 		animation: AnimationName 0s ease infinite;
-position: relative;
+		position: relative;
 		.pageSlice {
 			width: 70%;
 			display: flex;
@@ -515,11 +511,11 @@ position: relative;
 			margin-top: 15%;
 			h1 {
 				position: absolute;
-				top:15%;
+				top: 15%;
 				right: 5%;
 				font-family: " ";
-	font-size: clamp(1.5rem, 0.1111rem + 4.4444vw, 4rem);
-			
+				font-size: clamp(1.5rem, 0.1111rem + 4.4444vw, 4rem);
+
 				text-shadow: 5px 5px 20px rgba(28, 141, 43, 0.76);
 			}
 		}
@@ -533,29 +529,28 @@ position: relative;
 		height: 100vh;
 		width: 100%;
 		overflow: hidden;
-		position:relative ;
+		position: relative;
 		background-size: cover;
 		background-position: center;
-		z-index: -1000;
+	
 		background-image: url("../public/img/secondpage.jpeg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 		.pageSlice {
 			width: 100%;
-
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
 			h1 {
 				position: absolute;
-				top:8%;
+				top: 8%;
 				letter-spacing: 0.2rem;
 				text-transform: uppercase;
-		font-weight: 1000;
-		font-size: clamp(2.1rem, 2vw, 8rem);
-		text-shadow: 5px 5px 20px rgba(28, 141, 43, 0.76);
+				font-weight: 1000;
+				font-size: clamp(2.1rem, 2vw, 8rem);
+				text-shadow: 5px 5px 20px rgba(28, 141, 43, 0.76);
 			}
 		}
 	}
@@ -596,14 +591,16 @@ position: relative;
 			right: 0;
 			margin-right: 10px;
 			width: 45%;
-			
+
 			background-color: #000000c7;
-			h1 {color: #fafafafa;
+			h1 {
+				color: #fafafafa;
 				font-family: "Forum";
 				font-size: clamp(0.6rem, 3vw, 2.8rem);
 				text-wrap: wrap;
 			}
-			p {color: #fafafafa;
+			p {
+				color: #fafafafa;
 				font-size: clamp(0.2rem, 1.5vw, 1.8rem);
 				text-align: justify;
 
@@ -674,14 +671,16 @@ position: relative;
 			left: 0;
 			margin-left: 10px;
 			width: 60%;
-			
+
 			background-color: #000000c7;
-			h1 {color: #fafafafa;
+			h1 {
+				color: #fafafafa;
 				font-family: "Forum";
 				font-size: clamp(0.6rem, 3vw, 2.8rem);
 				text-wrap: wrap;
 			}
-			p {color: #fafafafa;
+			p {
+				color: #fafafafa;
 				font-size: clamp(0.2rem, 1.5vw, 1.8rem);
 				text-align: justify;
 
@@ -862,7 +861,7 @@ position: relative;
 		justify-content: center;
 		.Box {
 			padding: 0.5%;
-			margin-block:1%;
+			margin-block: 1%;
 			width: 90%;
 			h1 {
 				font-family: "Forum";
@@ -877,7 +876,7 @@ position: relative;
 			}
 		}
 		h1 {
-				font-size: clamp(1.4rem, 2vw, 5rem);
+			font-size: clamp(1.4rem, 2vw, 5rem);
 			font-family: "Forum";
 			margin-block: 2%;
 		}
@@ -1338,7 +1337,6 @@ position: relative;
 	.firstPageShum {
 		align-items: center;
 		.firstPageBox {
-			
 			border-radius: 30px;
 			padding: 1.5%;
 			width: 50%;
@@ -1407,8 +1405,9 @@ position: relative;
 					max-width: 350px;
 					position: relative;
 					margin-block: 10px;
-					border-radius: 30px;border: 3px solid rgba(255, 255, 255, 0.486);
-					
+					border-radius: 30px;
+					border: 3px solid rgba(255, 255, 255, 0.486);
+
 					padding: 10px;
 					justify-content: center;
 					p {
@@ -1447,9 +1446,8 @@ position: relative;
 			align-items: center;
 			width: 65%;
 			h1 {
-				
 				text-align: center;
-				
+
 				align-content: center;
 				font-size: clamp(0.5rem, 1.2vw, 3rem);
 			}
@@ -1581,8 +1579,8 @@ position: relative;
 		color: azure;
 
 		padding: 3.5%;
-		.textP{
-text-align: center;
+		.textP {
+			text-align: center;
 		}
 		h1 {
 			text-align: center;
@@ -1877,7 +1875,7 @@ text-align: center;
 			max-width: 95%;
 			padding: 20px;
 			align-items: center;
-			
+
 			.container {
 				width: 100%;
 				padding: 0;
@@ -3001,21 +2999,25 @@ text-align: center;
 		align-items: center;
 		color: #1c1c1c;
 		text-wrap: nowrap;
-a{
-	text-transform: none!important;
-	h2 {
-		text-decoration: none!important;
-		margin-inline: 5px;
-		font-family: "Forum";
-		color: #ffffff;
-		letter-spacing: 0.2rem;
-	}}
+		a {
+			text-transform: none !important;
+			z-index: 99;
+			h2 {
+				text-decoration: none !important;
+				margin-inline: 5px;
+				font-family: "Forum";
+				color: #ffffff;
+				letter-spacing: 0.2rem;
+			}
+		}
 	}
 }
 @media (max-width: 1050px) {
 	.line {
-		div {text-decoration: none;
-			h2 {text-decoration: none;
+		div {
+			text-decoration: none;
+			h2 {
+				text-decoration: none;
 				font-size: clamp(0.1rem, 1vw, 8rem);
 			}
 		}
@@ -3024,8 +3026,10 @@ a{
 
 @media (min-width: 1050px) {
 	.line {
-		div {text-decoration: none;
-			h2 {text-decoration: none;
+		div {
+			text-decoration: none;
+			h2 {
+				text-decoration: none;
 				font-size: 2.2vh;
 			}
 		}
@@ -3081,7 +3085,8 @@ a{
 	height: 52%;
 	transition-delay: 1s;
 }
-.line::after {text-decoration: none;
+.line::after {
+	text-decoration: none;
 	content: ""; /* Пустой элемент для точки */
 	position: absolute;
 	width: 10px; /* Ширина точки */
@@ -3098,7 +3103,7 @@ a{
 
 	transition: top 2s ease;
 	top: 20%;
-	z-index: -1;
+	
 	height: 100vh;
 	img {
 		/* Задаем максимальную ширину изображения */
@@ -3116,28 +3121,29 @@ a{
 	width: 500px;
 	border-bottom: 3px solid #ffffff;
 	transform: translateX(-100px);
-
 	opacity: 0;
 	transition: opacity 3.5s ease;
 	display: flex;
-}
-.lineText-phone {
-	position: absolute;
-	background-color: #000000c7;
-	display: flex;
-	align-items: center;
-text-decoration: none;
-	height: 40px;
-	width: 220px;
-	justify-content: center;
-	border-radius: 20px;
-	color: #ffffff;
-	h2 {text-decoration: none!important;
-		font-family: "Forum";
-		font-size: clamp(0.9rem, 1.5vw, 8rem);
-		letter-spacing: 0.2rem;
+	div{
+		position: absolute;
+		background-color: #000000c7;
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		height: 40px;
+		width: 220px;
+		justify-content: center;
+		border-radius: 20px;
+		color: #ffffff;
+		a{h2 {
+			text-decoration: none !important;
+			font-family: "Forum";
+			font-size: clamp(0.9rem, 1.5vw, 8rem);
+			letter-spacing: 0.2rem;
+		}}
 	}
 }
+
 
 .line-phone.show {
 	opacity: 1;
@@ -3247,9 +3253,7 @@ ul {
 			margin-block: 2%;
 			display: flex;
 			flex-direction: column-reverse;
-			
-				
-			
+
 			.footer-logo {
 				margin-block: 2%;
 				display: flex;
@@ -3287,13 +3291,14 @@ ul {
 				}
 			}
 		}
-		.footer-content{
-		}.footer-last-text{
+		.footer-content {
+		}
+		.footer-last-text {
 			display: flex;
 			color: #fafafa;
-			p{
+			p {
 				background-color: #000000;
-				border-radius:20px ;
+				border-radius: 20px;
 				padding: 1%;
 				margin-inline: 1.5%;
 				color: #fafafa;

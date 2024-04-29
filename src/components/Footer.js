@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 import {
@@ -288,27 +287,11 @@ function Footer() {
 								<div className="rower d-flex justify-between">
 									<div className="col-xl-4 col-lg-4 mb-0">
 										<div className="footer-widget d-flex mb-0">
-											<div className="footer-logo  w100p mb-0 ">
-												<a href="/">
-													<img
-														src={
-															process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"
-														}
-														className="img-fluid"
-														alt="logo"
-														style={{ maxWidth: "50%" }}
-													/>
-												</a>
-											</div>
-											<div className="footer-text ">
-												<p>
-													Реалізація комплексних проєктів з дотриманням високих
-													стандартів якості Створення провідної мережі та підхід
-													до поняття автобезпеки як до культури, зібравши
-													результати напрацювань даної галузі у нашій студії
-													Націленість на індивідуальний підхід до автомобілів та
-													їх власників
-												</p>
+										<div className="footer-last-text">
+											<p>МІСІЯ. Реалізація комплексних проєктів з дотриманням високих стандартів якості.</p>
+											<p>ЦІЛЬ. Створення провідної мережі та підхід до поняття автобезпеки як до культури, зібравши результати напрацювань даної галузі у нашій студії</p>
+											<p>ЦІННОСТІ. Головними складовими являються якість, індивідуальний підхід до автомобілів та емоції їх власників</p>
+											<p>ПІДХІД. Клієнт обов’язково повинен залишитись задоволеним результатом нашої роботи.</p>
 											</div>
 										</div>
 									</div>

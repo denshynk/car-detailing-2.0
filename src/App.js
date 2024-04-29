@@ -1,7 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import axios from "axios";
-import gsap from "gsap";
 import { AnimatePresence } from "framer-motion";
 
 import LoadingPage from "./components/LoadingPage/LoadingPage.js";

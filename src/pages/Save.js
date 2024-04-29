@@ -14,9 +14,6 @@ const Save = () => {
 	const section5 = useRef();
 	const section6 = useRef();
 	const section7 = useRef();
-	const section8 = useRef();
-	const section9 = useRef();
-	const section10 = useRef();
 	const lastSection = useRef();
 
 	function scrollTo(section) {
@@ -395,7 +392,7 @@ const Save = () => {
 											src="..//img/aproved.png"
 											alt="aproved"
 										/>
-										<h2>АХИСНИЙ КОЖУХ БЛОКА УПРАВЛІННЯ</h2>
+										<h2>ЗАХИСНИЙ КОЖУХ БЛОКА УПРАВЛІННЯ</h2>
 										<p>
 											Запобігає заміні штатного блоку на заздалегідь
 											підготовлений викрадачем, усуває можливість відключення
