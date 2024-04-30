@@ -61,6 +61,9 @@ const Galery = () => {
 				ref={boxikRef}
 				style={{
 					backgroundImage: 'url("..//img/galery.jpg")',
+					backgroundPosition: "center",
+					backgroundSize: "cover",
+					backgroundRepeat:"no-repeat"
 				}}
 			>
 				<div ref={section1}>
