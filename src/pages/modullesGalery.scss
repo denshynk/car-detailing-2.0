@@ -7,7 +7,7 @@
 .heading {
 	margin-top: 7%;
 	padding: 1rem 0;
-	font-size: 5vh;
+	font-size: clamp(1.4rem, 3.5vw, 8rem);
 	text-align: center;
 	color: rgb(255, 255, 255);
 	font-family: "Porshe";
@@ -20,14 +20,14 @@
 }
 
 .swiper-slide {
-	width: 45vh;
-	height: 50vh;
+	width: 35vh;
+	height: 40vh;
 	position: relative;
 }
 
 .swiper-slide img {
 	width: 100%;
-	height: 100%;
+	aspect-ratio: 1 / 1;
 	border-radius: 2rem;
 	object-fit: cover;
 }
@@ -109,4 +109,16 @@
 
 .swiper-pagination .swiper-pagination-bullet-active {
 	background: var(--primary);
+}
+
+.galeryText {
+	display: flex;
+	color: #fafafafa;
+	background-color: rgba(0, 0, 0, 0.431372549);
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+	padding: 2.5%;
+	margin-top: -50px;
+	font-size: clamp(0.6rem, 0.25rem + 1.3333vw, 1rem);
 }

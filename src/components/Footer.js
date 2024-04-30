@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useRef} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 
 import {
 	faMapMarkerAlt,
@@ -9,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Section from "./Section";
 
-function Footer() {
+function Footer({ boxikRef }) {
 	const [formData, setFormData] = React.useState({
 		firstName: "",
 		phoneNumber: "",
@@ -62,6 +65,117 @@ function Footer() {
 			);
 		}
 	};
+
+	gsap.registerPlugin(ScrollTrigger);
+	const firstRef = useRef();
+	const trigerRef = useRef();
+	const trigerRefDesktop = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			firstRef.current,
+			{
+				opacity: 0,
+				x: -400,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: boxikRef.current,
+					trigger: trigerRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const secondtRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			secondtRef.current,
+			{
+				opacity: 0,
+				x: 400,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					
+					scroller: boxikRef.current,
+					trigger: trigerRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const thirstRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			thirstRef.current,
+			{
+				opacity: 0,
+				xy: -400,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: boxikRef.current,
+					trigger: trigerRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const fourthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fourthRef.current,
+			{
+				opacity: 0,
+				x: 400,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: boxikRef.current,
+					trigger: trigerRef.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+	const fifthRef = useRef();
+	React.useLayoutEffect(() => {
+		gsap.fromTo(
+			fifthRef.current,
+			{
+				opacity: 0,
+				y: -40,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: boxikRef.current,
+					trigger: trigerRefDesktop.current,
+					start: "top center",
+					end: "bottom center",
+				},
+			}
+		);
+	});
+
 	if (isWideScreen) {
 		return (
 			<Section>
@@ -115,7 +229,11 @@ function Footer() {
 										required=""
 										onChange={handleChange}
 									/>
-									<label htmlFor="name" className="form__label">
+									<label
+										htmlFor="name"
+										className="form__label"
+										ref={trigerRefDesktop}
+									>
 										Коментар
 									</label>
 								</div>
@@ -187,11 +305,25 @@ function Footer() {
 								<div className="rower">
 									<div className="col-xl-4 col-lg-4 ">
 										<div className="footer-widget d-flex">
-											<div className="footer-last-text">
-											<p>МІСІЯ. Реалізація комплексних проєктів з дотриманням високих стандартів якості.</p>
-											<p>ЦІЛЬ. Створення провідної мережі та підхід до поняття автобезпеки як до культури, зібравши результати напрацювань даної галузі у нашій студії</p>
-											<p>ЦІННОСТІ. Головними складовими являються якість, індивідуальний підхід до автомобілів та емоції їх власників</p>
-											<p>ПІДХІД. Клієнт обов’язково повинен залишитись задоволеним результатом нашої роботи.</p>
+											<div className="footer-last-text" ref={fifthRef}>
+												<p>
+													МІСІЯ. Реалізація комплексних проєктів з дотриманням
+													високих стандартів якості.
+												</p>
+												<p>
+													ЦІЛЬ. Створення провідної мережі та підхід до поняття
+													автобезпеки як до культури, зібравши результати
+													напрацювань даної галузі у нашій студії
+												</p>
+												<p>
+													ЦІННОСТІ. Головними складовими являються якість,
+													індивідуальний підхід до автомобілів та емоції їх
+													власників
+												</p>
+												<p>
+													ПІДХІД. Клієнт обов’язково повинен залишитись
+													задоволеним результатом нашої роботи.
+												</p>
 											</div>
 											{/* <div className="footer-logo">
 												<a href="/">
@@ -283,21 +415,33 @@ function Footer() {
 									</div>
 								</div>
 							</div>
-							<div className="footer-content pt-5 pb-5">
+							<div className="footer-content pt-5 pb-5" ref={trigerRef}>
 								<div className="rower d-flex justify-between">
 									<div className="col-xl-4 col-lg-4 mb-0">
 										<div className="footer-widget d-flex mb-0">
-										<div className="footer-last-text">
-											<p>МІСІЯ. Реалізація комплексних проєктів з дотриманням високих стандартів якості.</p>
-											<p>ЦІЛЬ. Створення провідної мережі та підхід до поняття автобезпеки як до культури, зібравши результати напрацювань даної галузі у нашій студії</p>
-											<p>ЦІННОСТІ. Головними складовими являються якість, індивідуальний підхід до автомобілів та емоції їх власників</p>
-											<p>ПІДХІД. Клієнт обов’язково повинен залишитись задоволеним результатом нашої роботи.</p>
+											<div className="footer-last-text">
+												<p ref={firstRef}>
+													МІСІЯ. Реалізація комплексних проєктів з дотриманням
+													високих стандартів якості.
+												</p>
+												<p ref={secondtRef}>
+													ЦІЛЬ. Створення провідної мережі та підхід до поняття
+													автобезпеки як до культури, зібравши результати
+													напрацювань даної галузі у нашій студії
+												</p>
+												<p ref={thirstRef}>
+													ЦІННОСТІ. Головними складовими являються якість,
+													індивідуальний підхід до автомобілів та емоції їх
+													власників
+												</p>
+												<p ref={fourthRef}>
+													ПІДХІД. Клієнт обов’язково повинен залишитись
+													задоволеним результатом нашої роботи.
+												</p>
 											</div>
 										</div>
 									</div>
-									<div className="col-xl-4 col-lg-4 col-md-6">
-										
-									</div>
+									<div className="col-xl-4 col-lg-4 col-md-6"></div>
 									<div className="col-xl-4 col-lg-4 col-md-6 mb-50">
 										<div className="footer-widget"></div>
 									</div>

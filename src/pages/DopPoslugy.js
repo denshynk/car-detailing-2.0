@@ -11,7 +11,7 @@ const DopPoslugy = () => {
 	const section2 = useRef();
 	const lastSection = useRef();
 	const section4 = useRef();
-
+	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -60,7 +60,7 @@ const DopPoslugy = () => {
 	});
 	return (
 		<>
-			<div className={`boxik ${styles.container}`}>
+			<div className={`boxik ${styles.container}`} ref={boxikRef}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -121,9 +121,9 @@ const DopPoslugy = () => {
 										під час паркування.
 									</li>
 									<li>
-										СИСТЕМИ МУЛЬТИМЕДІА ТА АВТОМАГНІТОЛИ: Насолоджуйтеся відмінною якістю
-										звуку та зручністю взаємодії з вашими улюбленими
-										мультимедійними пристроями в автомобілі.
+										СИСТЕМИ МУЛЬТИМЕДІА ТА АВТОМАГНІТОЛИ: Насолоджуйтеся
+										відмінною якістю звуку та зручністю взаємодії з вашими
+										улюбленими мультимедійними пристроями в автомобілі.
 									</li>
 									<li>
 										КАМЕРИ КРУГОВОГО ОГЛЯДУ 360: Позбудьтеся сліпих зон навколо
@@ -142,8 +142,8 @@ const DopPoslugy = () => {
 									<li>
 										АПГРЕЙД ФАР: Головне світло автомобіля- один з найважливіших
 										атрибутів безпеки та комфорту під час поїздки. Досягніть
-										найкращої видимості з допомогою перепаковки фар, полірування та заміни
-										ламп.
+										найкращої видимості з допомогою перепаковки фар, полірування
+										та заміни ламп.
 									</li>
 								</ul>
 							</div>
@@ -153,7 +153,7 @@ const DopPoslugy = () => {
 
 				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
-						<Footer />
+						<Footer boxikRef={boxikRef} />
 					</Section>
 				</div>
 			</div>

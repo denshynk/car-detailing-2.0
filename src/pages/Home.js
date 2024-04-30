@@ -12,6 +12,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 	const section2 = useRef();
 	const section3 = useRef();
 	const lastSection = useRef();
+	const boxikRef = useRef(null);
 	gsap.registerPlugin(ScrollTrigger);
 
 	function scrollTo(section) {
@@ -44,7 +45,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 	const [isWideScreen, setIsWideScreen] = React.useState(
 		window.innerWidth > 600
 	);
-	const [showLines, setShowLines] = React.useState(true);
+	const showLines = React.useState(true);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -106,7 +107,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 
 	return (
 		<>
-			<div className={`boxik ${styles.container}`}>
+			<div className={`boxik ${styles.container}`} ref={boxikRef}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -114,7 +115,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 						goToSectionRef={section2}
 					>
 						<div className="mainpage">
-							<div clasname='mainpaeBackGround'></div>
+							<div clasname="mainpaeBackGround"></div>
 							<img
 								src={process.env.PUBLIC_URL + "/img/v_9_RGB.svg"}
 								className="animate__animated animate__flash"
@@ -203,8 +204,8 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-												<Link
-														style={{ textDecoration: "none" , color:'#fafafa' }}
+													<Link
+														style={{ textDecoration: "none", color: "#fafafa" }}
 														to="/dodatkoviposlugy"
 													>
 														<h2>Системи паркування</h2>
@@ -217,8 +218,8 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-												<Link
-														style={{ textDecoration: "none", color:'#fafafa'  }}
+													<Link
+														style={{ textDecoration: "none", color: "#fafafa" }}
 														to="/shumoizol"
 													>
 														<h2>Шумо та вiбро iзоляція</h2>
@@ -231,8 +232,8 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-												<Link
-														style={{ textDecoration: "none", color:'#fafafa'  }}
+													<Link
+														style={{ textDecoration: "none", color: "#fafafa" }}
 														to="/zahysnaplivka"
 													>
 														<h2 className="h22">Тонування </h2>
@@ -246,7 +247,10 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-												<Link style={{ textDecoration: "none" , color:'#fafafa' }} to="/save">
+													<Link
+														style={{ textDecoration: "none", color: "#fafafa" }}
+														to="/save"
+													>
 														<h2>Автозапуск</h2>
 													</Link>
 												</div>
@@ -257,8 +261,8 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 												}`}
 											>
 												<div className="lineText-phone">
-												<Link
-														style={{ textDecoration: "none", color:'#fafafa' }}
+													<Link
+														style={{ textDecoration: "none", color: "#fafafa" }}
 														to="/dodatkoviposlugy"
 													>
 														<h2>Автооптика</h2>
@@ -338,7 +342,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 					</Section>
 				</div>
 				<div ref={lastSection}>
-					<Footer />
+					<Footer boxikRef={boxikRef} />
 				</div>
 			</div>
 		</>

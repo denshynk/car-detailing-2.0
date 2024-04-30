@@ -4,12 +4,8 @@ import Drawer from "./Drawer";
 import Headroom from "react-headroom";
 
 function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,setIsActiveLink,handleLinkClick}) {
-	
-
 	const [burgerOpened, setBurgerOpened] = React.useState(false);
 	const [isChecked, setIsChecked] = useState(false);
-
-
 
 	const toggleBasket = () => {
 		setBurgerOpened(!burgerOpened);
@@ -23,25 +19,37 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 	const headerRef = useRef(null);
 
 	useEffect(() => {
-		// Получаем высоту Header после рендеринга и обновляем drawerTop
+		// Функция обновления drawerTop
 		const updateDrawerTop = () => {
 			if (headerRef.current) {
 				const headerHeight = headerRef.current.offsetHeight;
-				// Устанавливаем высоту Header в состояние
 				setDrawerTop(headerHeight);
 			}
 		};
 
-		// Вызываем функцию обновления высоты при монтировании компонента и при изменении ширины экрана
+		// Создание нового экземпляра MutationObserver
+		const observer = new MutationObserver(updateDrawerTop);
+
+		// Настройка наблюдения за изменениями внутри document.body
+		observer.observe(document.body, {
+			attributes: true,
+			childList: true,
+			subtree: true,
+		});
+
+		// Вызов функции обновления при монтировании компонента и при изменении ширины экрана
 		updateDrawerTop();
 		window.addEventListener("resize", updateDrawerTop);
 
-		// Отписываемся от обновления при размонтировании компонента
+		// Обновление высоты с небольшой задержкой после загрузки DOM
+		setTimeout(updateDrawerTop, 10);
+
+		// Отписка от событий при размонтировании компонента и от наблюдения за изменениями DOM
 		return () => {
 			window.removeEventListener("resize", updateDrawerTop);
+			observer.disconnect();
 		};
-	}, [headerRef]);
-
+	}, [setDrawerTop]); // Зависимость от headerRef
 
 	if (!isWideScreen) {
 		return (
@@ -159,7 +167,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 							<a
 								className="d-flex"
 								style={{ width: "20px" }}
-								href="tel:+380730040066"
+								href="https://vibr.cc/380730040066"
 								rel="noopener noreferrer"
 							>
 								<img
@@ -186,7 +194,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 							<a
 								className="d-flex"
 								style={{ width: "20px" }}
-								href="https://www.instagram.com/auto.safe.culture?igsh=MTBoa2xqcXdiN3ZjMg=="
+								href="https://www.tiktok.com/@autosafeculture"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

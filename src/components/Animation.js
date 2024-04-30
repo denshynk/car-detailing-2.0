@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion'
-import LoadingPage from './LoadingPage/LoadingPage';
-
 
 const Animation = (OgComponents) => {
     return () => (

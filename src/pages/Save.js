@@ -15,7 +15,7 @@ const Save = () => {
 	const section6 = useRef();
 	const section7 = useRef();
 	const lastSection = useRef();
-
+const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -128,7 +128,7 @@ const Save = () => {
 
 	return (
 		<>
-			<div className={`boxik ${styles.container}`}>
+			<div className={`boxik ${styles.container}`} ref={boxikRef}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -155,10 +155,11 @@ const Save = () => {
 
 									<p>
 										Найкраще рішення для безпеки вашого автомобіля – це
-										комплексний підхід з декількох контурів захисту і оповіщення. Завдяки великому досвіду наших спеціалістів в студії Auto
-										Safe Culture ми підбираємо індивідуальні рішення під ваш
-										автомобіль в залежності від побажань автовласника . Для
-										економії свого часу Ви можете попередньо ознайомитися з
+										комплексний підхід з декількох контурів захисту і
+										оповіщення. Завдяки великому досвіду наших спеціалістів в
+										студії Auto Safe Culture ми підбираємо індивідуальні рішення
+										під ваш автомобіль в залежності від побажань автовласника .
+										Для економії свого часу Ви можете попередньо ознайомитися з
 										сучасними системами захисту і порівняти їх.
 									</p>
 									<div className="d-flex justify-end flex align-end">
@@ -436,7 +437,7 @@ const Save = () => {
 				</div>
 				<div ref={lastSection}>
 					<Section showArrow={false}>
-						<Footer />
+						<Footer boxikRef={ boxikRef} />
 					</Section>
 				</div>
 			</div>

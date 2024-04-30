@@ -11,7 +11,7 @@ const Detailing = () => {
 	const section2 = useRef();
 	const section3 = useRef();
 	const lastSection = useRef();
-
+	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -124,7 +124,7 @@ const Detailing = () => {
 
 	return (
 		<>
-			<div className={`boxik ${styles.container}`}>
+			<div className={`boxik ${styles.container}`} ref={boxikRef}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -179,10 +179,12 @@ const Detailing = () => {
 							}}
 						>
 							<div className="firstPageBox" ref={secondtRef}>
-								<h1 className="textH1">ASC проводить трифазне миття автомобіля</h1>
+								<h1 className="textH1">
+									ASC проводить трифазне миття автомобіля
+								</h1>
 								<div className="container-cart">
 									<div className="cart">
-										<h1 >1</h1>
+										<h1>1</h1>
 										<img src="..//img/detailing/detailing2/1.jpg" alt="det1" />
 										<p>
 											На першому етапі відбувається первинна обробка кузова
@@ -270,8 +272,6 @@ const Detailing = () => {
 								<div className="content-left" ref={fourthRef}>
 									<h1>ПОСЛУГА ХІМЧИСТКИ САЛОНУ АВТО</h1>
 									<div className="conatainer">
-										{" "}
-										
 										<p>
 											Хімчистка автомобіля - це процес глибокого очищення всіх
 											поверхонь від різних забруднень, плям і пилу за допомогою
@@ -297,7 +297,6 @@ const Detailing = () => {
 										</li>
 										<li> Чистка підлоги з вилученням сидінь.</li>
 										<li>
-											{" "}
 											Чистка стелі: використання спеціальних мікрофібрових
 											ганчірок і щіток для матеріалу алькантара.
 										</li>
@@ -323,7 +322,7 @@ const Detailing = () => {
 				</div>
 				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
-						<Footer />
+						<Footer boxikRef={ boxikRef}/>
 					</Section>
 				</div>
 			</div>

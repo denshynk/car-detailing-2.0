@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./LoadingPage.module.scss";
 import { ReactComponent as Logo } from "..//../img/ASC_logo_5_preloading.svg";
-import gsap from "gsap";
+
 
 function LoadingPage() {
 

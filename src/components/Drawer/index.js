@@ -6,7 +6,6 @@ import styles from "./Drawer.module.scss";
 function Drawer({
 	opened,
 	handleLinkClick,
-	isActiveLink,
 	toggleBasket,
 	drawerTop,
 }) {
@@ -42,7 +41,7 @@ function Drawer({
 							toggleBasket();
 						}}
 					>
-						Шумо- вiбро iзоляцiя
+						Шумо та вiбро iзоляцiя
 					</Link>
 					<Link
 						to="/zahysnaplivka"
@@ -127,7 +126,7 @@ function Drawer({
 									<a
 										className="d-flex"
 										style={{ width: "30px" }}
-										href="tel:+380730040066"
+										href="https://vibr.cc/380730040066"
 										rel="noopener noreferrer"
 									>
 										<img
@@ -154,7 +153,7 @@ function Drawer({
 									<a
 										className="d-flex"
 										style={{ width: "30px" }}
-										href="https://www.instagram.com/auto.safe.culture?igsh=MTBoa2xqcXdiN3ZjMg=="
+										href="https://www.tiktok.com/@autosafeculture"
 										target="_blank"
 										rel="noopener noreferrer"
 									>

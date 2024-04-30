@@ -11,9 +11,8 @@ const Shumoizol = () => {
 	const section2 = useRef();
 	const section3 = useRef();
 	const lastSection = useRef();
-	const section5 = useRef();
-	const section6 = useRef();
 
+	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -85,7 +84,7 @@ const Shumoizol = () => {
 
 	return (
 		<>
-			<div className={`boxik ${styles.container}`}>
+			<div className={`boxik ${styles.container}`} ref={boxikRef}>
 				<div ref={section1}>
 					<Section
 						showArrow={true}
@@ -222,7 +221,7 @@ const Shumoizol = () => {
 
 				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
-						<Footer />
+						<Footer boxikRef={boxikRef} />
 					</Section>
 				</div>
 			</div>

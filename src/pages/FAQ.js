@@ -3,15 +3,14 @@ import Footer from "../components/Footer.js";
 import Animation from "../components/Animation.js";
 
 const FAQ = () => {
-	const lastSection = React.useRef
 	const [selectedItem, setSelectedItem] = React.useState(null);
-
+	const boxikRef = React.useRef(null);
 	const handleClick = (item) => {
 		setSelectedItem(selectedItem === item ? null : item);
 	};
 
 	return (
-		<>
+		<div ref={boxikRef}>
 			<div
 				className="firstPageFAQ"
 				style={{
@@ -331,8 +330,8 @@ const FAQ = () => {
 				</div>
 			</div>
 
-			<Footer ref={lastSection}/>
-		</>
+			<Footer boxikRef={boxikRef} />
+		</div>
 	);
 };
 

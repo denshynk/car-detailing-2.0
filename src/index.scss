@@ -73,8 +73,11 @@ code {
 			align-items: center;
 			padding-left: 25px;
 			padding-right: 25px;
+			display: flex;
+			align-items: center;
 		}
 		img {
+			margin-block: 1.5%;
 			width: 15%;
 		}
 	}
@@ -106,6 +109,8 @@ code {
 		display: flex;
 	}
 	a {
+		display: flex;
+		align-items: center;
 		text-decoration: none;
 	}
 	h1 {
@@ -260,7 +265,7 @@ code {
 .mainpage {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/13.jpg");
+	background-image: url("../public/img/mainpage/mainpage1.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -315,7 +320,7 @@ code {
 		display: flex;
 		align-items: center;
 		.firstPageBox {
-			background-color: #000000c7;
+			background-color: #00000079;
 			border-radius: 20px;
 			padding: 4%;
 			width: 73%;
@@ -349,7 +354,6 @@ code {
 .firstPageTAG {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -494,7 +498,7 @@ code {
 		align-items: center;
 		height: 100vh;
 		width: 100%;
-		background-image: url("../public/img/secondpage.jpeg");
+		background-image: url("../public/img//mainpage/mainpage2.jpeg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -532,8 +536,7 @@ code {
 		position: relative;
 		background-size: cover;
 		background-position: center;
-	
-		background-image: url("../public/img/secondpage.jpeg");
+		background-image: url("../public/img//mainpage/mainpage2.jpeg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -613,7 +616,8 @@ code {
 .thirdpage {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/thirdpage.jpg");
+	background-image: url("../public/img//mainpage/mainpage3.jpg");
+
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -693,7 +697,7 @@ code {
 .fourthpage {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/fourthpage.jpg");
+	background-image: url("../public/img/mainpage/mainpage4.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -720,7 +724,6 @@ code {
 	height: 100vh;
 	width: 100%;
 
-	background-image: url("../public/img/thirdpage.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -792,7 +795,6 @@ code {
 	height: 100vh;
 	width: 100%;
 
-	background-image: url("../public/img/thirdpage.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -931,7 +933,7 @@ code {
 					list-style: none;
 					li {
 						font-family: "Arimo";
-						background-color: #0000006e;
+						background-color: #00000079;
 						padding: 20px;
 						border-radius: 30px;
 						font-size: 14px;
@@ -947,7 +949,6 @@ code {
 	height: 100vh;
 	width: 100%;
 
-	background-image: url("../public/img/thirdpage.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1087,7 +1088,7 @@ code {
 .sixthpageSave {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/thirdpage.jpg");
+
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1148,7 +1149,7 @@ code {
 .seventhpageSave {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/thirdpage.jpg");
+
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1186,7 +1187,7 @@ code {
 				align-items: center;
 
 				.card {
-					background-color: #000000c7;
+					background-color: #00000079;
 
 					border-radius: 30px;
 					padding: 3%;
@@ -1275,7 +1276,6 @@ code {
 .firstPageShum {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1319,7 +1319,7 @@ code {
 		display: flex;
 		align-items: center;
 		.firstPageBox {
-			background-color: #000000c7;
+			background-color: #00000079;
 			border-radius: 20px;
 
 			width: 100%;
@@ -1355,7 +1355,6 @@ code {
 .secondPageShum {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1399,7 +1398,7 @@ code {
 				margin: 0 0;
 
 				.card {
-					background-color: #000000c7;
+					background-color: #00000079;
 					display: flex;
 					justify-content: flex-start;
 					max-width: 350px;
@@ -1494,7 +1493,6 @@ code {
 .thirdPageShum {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1521,7 +1519,7 @@ code {
 			margin-top: -20px;
 			flex-direction: column-reverse;
 
-			background-color: #000000c7;
+			background-color: #00000079;
 			h1 {
 				align-content: center;
 				font-size: clamp(1.9rem, 4vw, 5rem);
@@ -1567,7 +1565,6 @@ code {
 .firstPagePlivka {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1616,7 +1613,7 @@ code {
 		justify-content: center;
 		.firstPageBox {
 			margin-top: -50px;
-			background-color: #000000c7;
+			background-color: #00000079;
 			border-radius: 20px;
 
 			width: 95%;
@@ -1652,7 +1649,6 @@ code {
 .secondPagePlivka {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1756,7 +1752,6 @@ code {
 .thirdPagePlivka {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1782,7 +1777,7 @@ code {
 				gap: 2%;
 				.card {
 					transition: all 0.3s ease-in-out;
-					background-color: #000000c7;
+					background-color: #00000079;
 					padding: 10px;
 
 					border-radius: 20px;
@@ -1845,7 +1840,6 @@ code {
 .fourthPagePlivka {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -1858,6 +1852,10 @@ code {
 	.fourthPagePlivka {
 		align-items: center;
 		.firstPageBox {
+			background-color: #000000c7;
+
+			padding: 2%;
+			border-radius: 20px;
 			margin-top: -100px;
 			flex-direction: column-reverse;
 			.text {
@@ -1939,7 +1937,6 @@ code {
 .firstPageDet {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2060,7 +2057,6 @@ code {
 .secondPageDet {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2180,7 +2176,6 @@ code {
 .thirdPageDet {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2205,7 +2200,7 @@ code {
 			align-items: flex-end;
 			margin-top: -100px;
 			.content {
-				background-color: #00000036;
+				background-color: #00000079;
 				padding: 2%;
 				border-radius: 30px;
 				width: 100%;
@@ -2268,7 +2263,6 @@ code {
 .fourthPageDet {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2411,7 +2405,6 @@ code {
 .firstPageDopposugy {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2516,7 +2509,6 @@ code {
 .secondPageDopposugy {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2542,7 +2534,7 @@ code {
 			margin-top: -100px;
 			padding-block: 3.5%;
 			padding-inline: 8%;
-			background-color: #000000d7;
+			background-color: #00000079;
 			ul {
 				padding: 1%;
 				display: grid;
@@ -2579,7 +2571,6 @@ code {
 .firstPageFAQ {
 	width: 100%;
 	min-height: 100vh;
-	background-image: url("../public/img/BMW-M5-F90-LCI-facelift-2020.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2691,7 +2682,7 @@ code {
 .LastPagepage {
 	height: 100vh;
 	width: 100%;
-	background-image: url("../public/img/jaguar.png");
+	background-image: url("../public/img/lastpage.png");
 	background-repeat: no-repeat;
 	background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 	background-position: center; /* This line centers the image within the container */
@@ -2900,7 +2891,7 @@ code {
 	.footer {
 		width: 100%;
 		height: 30vh;
-		background-image: url("../public/img/HotRods.jpg");
+
 		background-repeat: no-repeat;
 		background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
 		background-position: center; /* This line centers the image within the container */
@@ -3103,7 +3094,7 @@ code {
 
 	transition: top 2s ease;
 	top: 20%;
-	
+
 	height: 100vh;
 	img {
 		/* Задаем максимальную ширину изображения */
@@ -3124,7 +3115,7 @@ code {
 	opacity: 0;
 	transition: opacity 3.5s ease;
 	display: flex;
-	div{
+	div {
 		position: absolute;
 		background-color: #000000c7;
 		display: flex;
@@ -3135,15 +3126,16 @@ code {
 		justify-content: center;
 		border-radius: 20px;
 		color: #ffffff;
-		a{h2 {
-			text-decoration: none !important;
-			font-family: "Forum";
-			font-size: clamp(0.9rem, 1.5vw, 8rem);
-			letter-spacing: 0.2rem;
-		}}
+		a {
+			h2 {
+				text-decoration: none !important;
+				font-family: "Forum";
+				font-size: clamp(0.9rem, 1.5vw, 8rem);
+				letter-spacing: 0.2rem;
+			}
+		}
 	}
 }
-
 
 .line-phone.show {
 	opacity: 1;
@@ -3297,12 +3289,76 @@ ul {
 			display: flex;
 			color: #fafafa;
 			p {
-				background-color: #000000;
+				text-align: center;
+				background-color: #000000c7;
 				border-radius: 20px;
 				padding: 1%;
-				margin-inline: 1.5%;
-				color: #fafafa;
+				margin-block: 1.5%;
+				color: #ffffff;
 				font-size: clamp(0.7rem, 0.7vw, 2.8rem);
+				z-index: 10000;
+				margin-inline: 1.5%;
+				margin-top: 5%;
+				--border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+				--border-width: 0.125em;
+				--curve-size: 0.5em;
+				--blur: 30px;
+				--bg: #080312;
+				--color: #ffffff;
+				color: var(--color);
+				/* use position: relative; so that BG is only for .btn */
+				position: relative;
+				isolation: isolate;
+				display: inline-grid;
+				place-content: center;
+				padding: 0.5vh 1.5em;
+
+				border: 0;
+
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+				clip-path: polygon(
+					/* Top-left */ 0% var(--curve-size),
+					var(--curve-size) 0,
+					/* top-right */ 100% 0,
+					100% calc(100% - var(--curve-size)),
+					/* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+					/* bottom-right 2 */ 0 100%
+				);
+				transition: color 250ms;
+			}
+
+			p::after,
+			p::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+
+			p::before {
+				background: var(--border-color);
+				background-size: 300% 300%;
+				animation: move-bg7234 5s ease infinite;
+				z-index: -2;
+			}
+
+			p::after {
+				background: var(--bg);
+				z-index: -1;
+				clip-path: polygon(
+					/* Top-left */ var(--border-width)
+						calc(var(--curve-size) + var(--border-width) * 0.5),
+					calc(var(--curve-size) + var(--border-width) * 0.5)
+						var(--border-width),
+					/* top-right */ calc(100% - var(--border-width)) var(--border-width),
+					calc(100% - var(--border-width))
+						calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+					/* bottom-right 1 */
+						calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+						calc(100% - var(--border-width)),
+					/* bottom-right 2 */ var(--border-width)
+						calc(100% - var(--border-width))
+				);
+				transition: clip-path 500ms;
 			}
 		}
 	}
@@ -3325,22 +3381,6 @@ ul {
 	}
 }
 
-@media (min-width: 576px) {
-	.footer-container {
-		max-width: 97%;
-	}
-}
-@media (min-width: 768px) {
-	.footer-container {
-		max-width: 97%;
-	}
-}
-@media (min-width: 1000px) {
-	.footer-container {
-		max-width: 97%;
-	}
-}
-
 @media (min-width: 1200px) {
 	.footer-container {
 		max-width: 1140px;
@@ -3355,30 +3395,88 @@ ul {
 
 @media (max-width: 750px) {
 	.footer-section {
-		background-image: radial-gradient(
-				circle at center center,
-				transparent,
-				rgb(33, 33, 33)
-			),
-			repeating-linear-gradient(
-				135deg,
-				rgb(33, 33, 33) 0px,
-				rgb(33, 33, 33) 2px,
-				transparent 2px,
-				transparent 10px,
-				rgb(33, 33, 33) 10px,
-				rgb(33, 33, 33) 11px,
-				transparent 11px,
-				transparent 21px
-			),
-			repeating-linear-gradient(
-				45deg,
-				rgb(47, 47, 47) 0px,
-				rgb(47, 47, 47) 4px,
-				transparent 4px,
-				transparent 8px
-			),
-			linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
+		background-image: url("../public/img/footer-phone.jpg");
+		background-repeat: no-repeat;
+		background-size: cover; /* This line ensures the image covers the entire container, cropping as needed */
+		background-position: center; /* This line centers the image within the container */
+	}
+	.footer-container {
+		background-color: #00000096;
+
+		.footer-last-text {
+			p {
+				text-align: center;
+				background-color: #000000c7;
+				border-radius: 20px;
+				padding: 1%;
+				margin-block: 1.5%;
+				color: #ffffff;
+				font-size: clamp(0.7rem, 0.7vw, 2.8rem);
+				z-index: 10000;
+
+				margin-top: 5%;
+				--border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+				--border-width: 0.125em;
+				--curve-size: 0.5em;
+				--blur: 30px;
+				--bg: #080312;
+				--color: #ffffff;
+				color: var(--color);
+				/* use position: relative; so that BG is only for .btn */
+				position: relative;
+				isolation: isolate;
+				display: inline-grid;
+				place-content: center;
+				padding: 0.5vh 1.5em;
+
+				border: 0;
+
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+				clip-path: polygon(
+					/* Top-left */ 0% var(--curve-size),
+					var(--curve-size) 0,
+					/* top-right */ 100% 0,
+					100% calc(100% - var(--curve-size)),
+					/* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+					/* bottom-right 2 */ 0 100%
+				);
+				transition: color 250ms;
+			}
+
+			p::after,
+			p::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+
+			p::before {
+				background: var(--border-color);
+				background-size: 300% 300%;
+				animation: move-bg7234 5s ease infinite;
+				z-index: -2;
+			}
+
+			p::after {
+				background: var(--bg);
+				z-index: -1;
+				clip-path: polygon(
+					/* Top-left */ var(--border-width)
+						calc(var(--curve-size) + var(--border-width) * 0.5),
+					calc(var(--curve-size) + var(--border-width) * 0.5)
+						var(--border-width),
+					/* top-right */ calc(100% - var(--border-width)) var(--border-width),
+					calc(100% - var(--border-width))
+						calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+					/* bottom-right 1 */
+						calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+						calc(100% - var(--border-width)),
+					/* bottom-right 2 */ var(--border-width)
+						calc(100% - var(--border-width))
+				);
+				transition: clip-path 500ms;
+			}
+		}
 	}
 }
 
@@ -3414,7 +3512,7 @@ ul {
 			}
 
 			span {
-				color: #757575;
+				color: #ffffff;
 			}
 		}
 	}
@@ -3439,7 +3537,7 @@ ul {
 		}
 
 		.footer-text p {
-			color: #7e7e7e;
+			color: #ffffff;
 		}
 
 		.footer-social-icon span {

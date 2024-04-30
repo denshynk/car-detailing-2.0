@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import axios from "axios";
 import { AnimatePresence } from "framer-motion";
@@ -12,13 +12,15 @@ import Detailing from "./pages/Detailing";
 import Shumoizol from "./pages/Shumoizol";
 import ZahysnaPlivka from "./pages/ZahysnaPlivka";
 import CallBackBTN from "./components/CallBackBTB.js";
-import Drawer2 from "./components/Drawer2";
+import Drawer2 from "./components/Drawer2/index.js";
 import DopPoslugy from "./pages/DopPoslugy.js";
 import FAQ from "./pages/FAQ.js";
+import DesktopCallBack from "./components/DesktopCallBack/index.js";
 
 function App() {
 	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
 	const [callBackOpen, setCallBackOpen] = useState(false);
+	const [callBackDesktopOpen, setCallBackDesktopOpen] = useState(false);
 	const [formData, setFormData] = React.useState({
 		firstName: "",
 		phoneNumber: "",
@@ -58,10 +60,6 @@ function App() {
 		}
 	};
 
-	const handleCallBack = () => {
-		setCallBackOpen(true);
-		document.body.style.overflow = callBackOpen ? "auto" : "hidden";
-	};
 	React.useEffect(() => {
 		const handleResize = () => {
 			setIsWideScreen(window.innerWidth > 600);
@@ -74,8 +72,23 @@ function App() {
 		};
 	}, []);
 
+	const handleCallBack = () => {
+		setCallBackOpen(true);
+		document.body.style.overflow = callBackOpen ? "auto" : "hidden";
+	};
+
 	const closeCallBack = () => {
 		setCallBackOpen(false);
+		document.body.style.overflow = "auto"; // Включить скролл body
+	};
+
+	const handleCallBackDesktop = () => {
+		setCallBackDesktopOpen(true);
+		document.body.style.overflow = callBackDesktopOpen ? "auto" : "hidden";
+	};
+
+	const closeCallBackDesktop = () => {
+		setCallBackDesktopOpen(false);
 		document.body.style.overflow = "auto"; // Включить скролл body
 	};
 
@@ -96,12 +109,24 @@ function App() {
 		setIsActiveLink(link);
 	};
 
+	
+
 	return (
 		<>
 			{loading && <LoadingPage />}
 			<CallBackBTN
 				isWideScreen={isWideScreen}
 				handleCallBack={handleCallBack}
+				handleCallBackDesktop={handleCallBackDesktop}
+			/>
+			<DesktopCallBack
+				drawerTop={drawerTop}
+				opened={callBackDesktopOpen}
+				onClose={closeCallBackDesktop}
+				handleChange={handleChange}
+				handleSubmit={handleSubmit}
+				formData={formData}
+				setFormData={setFormData}
 			/>
 			<div className="main">
 				<div className="secret">
