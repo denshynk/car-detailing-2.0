@@ -68,7 +68,7 @@ const Galery = () => {
 			>
 				<div ref={section1}>
 					<Section
-						showArrow={true}
+						showArrow={false}
 						scrollTo={scrollTo}
 						goToSectionRef={section2}
 					>

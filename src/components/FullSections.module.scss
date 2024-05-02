@@ -4,7 +4,7 @@
 	scroll-snap-align: center;
 	position: relative;
 	overflow: hidden;
-	
+	position: -webkit-sticky;
 	.downarrow {
 		position: absolute;
 		bottom: 20px;

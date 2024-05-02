@@ -35,6 +35,7 @@ function Footer({ boxikRef }) {
 		};
 	}, []);
 
+
 	const handleChange = (e) => {
 		const { placeholder, value } = e.target; // Исправлено использование placeholder на name
 		setFormData({ ...formData, [placeholder]: value }); // Исправлено использование placeholder на name
@@ -82,7 +83,6 @@ function Footer({ boxikRef }) {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: boxikRef.current,
 					trigger: trigerRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -104,7 +104,6 @@ function Footer({ boxikRef }) {
 				duration: 1,
 				scrollTrigger: {
 					
-					scroller: boxikRef.current,
 					trigger: trigerRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -118,14 +117,14 @@ function Footer({ boxikRef }) {
 			thirstRef.current,
 			{
 				opacity: 0,
-				xy: -400,
+				x: -400,
 			},
 			{
 				opacity: 1,
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: boxikRef.current,
+					
 					trigger: trigerRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -146,7 +145,7 @@ function Footer({ boxikRef }) {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: boxikRef.current,
+					
 					trigger: trigerRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -160,17 +159,17 @@ function Footer({ boxikRef }) {
 			fifthRef.current,
 			{
 				opacity: 0,
-				y: -40,
+				y: 40,
 			},
 			{
 				opacity: 1,
-				y: 0,
+				y: -40,
 				duration: 1,
 				scrollTrigger: {
-					scroller: boxikRef.current,
+					scroller:trigerRef.current,
 					trigger: trigerRefDesktop.current,
 					start: "top center",
-					end: "bottom center",
+					end: "top center",
 				},
 			}
 		);
@@ -305,7 +304,7 @@ function Footer({ boxikRef }) {
 								<div className="rower">
 									<div className="col-xl-4 col-lg-4 ">
 										<div className="footer-widget d-flex">
-											<div className="footer-last-text" ref={fifthRef}>
+											<div className="footer-last-text">
 												<p>
 													МІСІЯ. Реалізація комплексних проєктів з дотриманням
 													високих стандартів якості.
@@ -420,21 +419,21 @@ function Footer({ boxikRef }) {
 									<div className="col-xl-4 col-lg-4 mb-0">
 										<div className="footer-widget d-flex mb-0">
 											<div className="footer-last-text">
-												<p ref={firstRef}>
+												<p >
 													МІСІЯ. Реалізація комплексних проєктів з дотриманням
 													високих стандартів якості.
 												</p>
-												<p ref={secondtRef}>
+												<p>
 													ЦІЛЬ. Створення провідної мережі та підхід до поняття
 													автобезпеки як до культури, зібравши результати
 													напрацювань даної галузі у нашій студії
 												</p>
-												<p ref={thirstRef}>
+												<p >
 													ЦІННОСТІ. Головними складовими являються якість,
 													індивідуальний підхід до автомобілів та емоції їх
 													власників
 												</p>
-												<p ref={fourthRef}>
+												<p>
 													ПІДХІД. Клієнт обов’язково повинен залишитись
 													задоволеним результатом нашої роботи.
 												</p>

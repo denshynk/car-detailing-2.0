@@ -126,7 +126,7 @@ function Drawer({
 									<a
 										className="d-flex"
 										style={{ width: "30px" }}
-										href="https://vibr.cc/380730040066"
+										href="viber://chat?number=+380730040066"
 										rel="noopener noreferrer"
 									>
 										<img

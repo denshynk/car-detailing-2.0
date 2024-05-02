@@ -26,7 +26,7 @@ const boxikRef = useRef(null);
 			firstRef.current,
 			{
 				opacity: 0,
-				x: -400,
+				x: -100,
 			},
 			{
 				opacity: 1,
@@ -47,7 +47,7 @@ const boxikRef = useRef(null);
 			secondtRef.current,
 			{
 				opacity: 0,
-				y: 40,
+				y: 100,
 			},
 			{
 				opacity: 1,
@@ -68,7 +68,7 @@ const boxikRef = useRef(null);
 			thirstRef.current,
 			{
 				opacity: 0,
-				y: -140,
+				y: -100,
 			},
 			{
 				opacity: 1,
@@ -110,12 +110,12 @@ const boxikRef = useRef(null);
 			fifthRef.current,
 			{
 				opacity: 0,
-				x: 1000,
+				x: 100,
 			},
 			{
 				opacity: 1,
 				x: 0,
-				duration: 2,
+				duration: 1,
 				scrollTrigger: {
 					scroller: ".boxik",
 					trigger: fifthRef.current,

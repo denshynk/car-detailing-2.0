@@ -128,7 +128,7 @@ function App() {
 				formData={formData}
 				setFormData={setFormData}
 			/>
-			<div className="main">
+		
 				<div className="secret">
 					{/* Привязываем ref к Header */}
 					<Header
@@ -171,7 +171,7 @@ function App() {
 						<Route path="/galery" element={<Galery />} />
 					</Routes>
 				</AnimatePresence>
-			</div>
+	
 		</>
 	);
 }

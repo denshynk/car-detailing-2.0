@@ -25,9 +25,10 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 			headlineRef.current,
 			{
 				opacity: 0,
-				x: 1000,
+				x: 100,
 			},
 			{
+				duration: 1,
 				opacity: 1,
 				x: 0,
 				scrollTrigger: {
@@ -35,12 +36,32 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 					trigger: headlineRef.current,
 					start: "top center",
 					end: "bottom center",
-
-					duration: 1,
 				},
 			}
 		);
 	});
+
+		const secondRef = useRef();
+		useLayoutEffect(() => {
+			gsap.fromTo(
+				secondRef.current,
+				{
+					opacity: 0,
+					x: -100,
+				},
+				{
+					opacity: 1,
+					x: 0,
+					duration: 1,
+					scrollTrigger: {
+						scroller: ".boxik",
+						trigger: secondRef.current,
+						start: "top center",
+						end: "bottom center",
+					},
+				}
+			);
+		});
 
 	const [isWideScreen, setIsWideScreen] = React.useState(
 		window.innerWidth > 600
@@ -313,7 +334,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 						scrollTo={scrollTo}
 					>
 						<div className="fourthpage">
-							<div className="Box">
+							<div className="Box" ref={secondRef}>
 								<p>
 									Auto Safe Culture - є центром нового покоління по
 									різносторонньому захисту автомобіля та підвищенню комфорту

@@ -110,7 +110,7 @@ const ZahysnaPlivka = () => {
 			fifthRef.current,
 			{
 				opacity: 0,
-				x: 1000,
+				x: 100,
 			},
 			{
 				opacity: 1,

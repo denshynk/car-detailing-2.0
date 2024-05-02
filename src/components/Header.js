@@ -167,7 +167,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 							<a
 								className="d-flex"
 								style={{ width: "20px" }}
-								href="https://vibr.cc/380730040066"
+								href="viber://chat?number=+380730040066"
 								rel="noopener noreferrer"
 							>
 								<img
