@@ -194,7 +194,7 @@ code {
 // 		}
 
 // }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
 	.mainpage {
 		img {
 			width: 45%;
@@ -208,40 +208,20 @@ code {
 		}
 	}
 }
-@media (max-width: 900px) {
+@media (max-width: 600px) {
 	.mainpage {
 		img {
 			width: 40%;
 		}
 		h1 {
 			position: absolute;
-			top: 75%;
+			bottom: 25%;
 			display: flex;
 			justify-content: center;
 		}
 	}
 }
 
-// @media (max-width: 1000px) {
-// 	.mainpage {
-// 		img {
-// 			margin-top: -20%;
-// 		}
-// 		.centerBox {
-// 			border-radius: 35px;
-// 			margin-bottom: 10vh;
-// 		}
-// 	}
-// }
-
-// @media (max-width: 1200px) {
-// 	.mainpage {
-
-// 		img {
-// 			width: 65%;
-// 		}
-// 	}
-// }
 
 @media (max-width: 560px) {
 	.mainpage {
@@ -253,18 +233,7 @@ code {
 	}
 }
 
-// @media (max-width: 500px) {
-// 	.mainpage {
-// 		img {
-// 			width: 100%;
-// 		}
 
-// 			h1 {
-// 				font-size: 3.2vh;
-// 			}
-
-// 	}
-// }
 
 .mainpage {
 	height: 100vh;
@@ -324,6 +293,7 @@ code {
 		display: flex;
 		align-items: center;
 		.firstPageBox {
+			margin-top: -30px;
 			background-color: #00000079;
 			border-radius: 20px;
 			padding: 4%;
@@ -552,26 +522,28 @@ code {
 			text-align: center;
 			h1 {
 				position: absolute;
-				top: 8%;
+				top: 10%;
 				letter-spacing: 0.2rem;
 				text-transform: uppercase;
 				font-weight: 1000;
-				font-size: clamp(2.1rem, 2vw, 8rem);
+				font-size: clamp(1.5rem, 0.1111rem + 4.4444vw, 4rem);
 				text-shadow: 5px 5px 20px rgba(28, 141, 43, 0.76);
 			}
 		}
 	}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
 	.thirdpage {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 
 		.Box {
+			padding: 2%;
 			width: 90%;
 			background-color: #000000c7;
+			margin-top:-100px;
 			h1 {
 				color: white;
 				font-family: "Forum";
@@ -580,6 +552,7 @@ code {
 			}
 
 			p {
+				margin-block: 1%;
 				color: white;
 				font-size: clamp(0.7rem, 1.5vw, 1.8rem);
 			}
@@ -587,17 +560,17 @@ code {
 	}
 }
 
-@media (min-width: 750px) {
+@media (min-width: 600px) {
 	.thirdpage {
 		display: flex;
 		justify-content: center;
 		align-self: center;
 		.Box {
-			padding: 10px;
+			padding: 2%;
 			top: 20%;
-			right: 0;
-			margin-right: 10px;
-			width: 45%;
+			left: 0;
+			margin-left: 10px;
+			width: 60%;
 
 			background-color: #000000c7;
 			h1 {
@@ -630,7 +603,7 @@ code {
 
 	.Box {
 		position: absolute;
-		padding: 20px;
+		
 		flex-direction: column;
 		display: flex;
 		color: black;
@@ -644,14 +617,15 @@ code {
 	}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
 	.fourthpage {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 
 		.Box {
-			padding: 2.5%;
+			margin-top:-30px;
+			padding: 20px;
 			width: 90%;
 			background-color: #000000c7;
 			h1 {
@@ -662,6 +636,7 @@ code {
 			}
 
 			p {
+			
 				color: white;
 				font-size: clamp(0.7rem, 1.5vw, 1.8rem);
 			}
@@ -669,7 +644,7 @@ code {
 	}
 }
 
-@media (min-width: 750px) {
+@media (min-width: 600px) {
 	.fourthpage {
 		display: flex;
 		justify-content: center;
@@ -872,20 +847,20 @@ code {
 			width: 90%;
 			h1 {
 				font-family: "Forum";
-				font-size: clamp(1.4rem, 2vw, 5rem);
+				font-size: clamp(0.1rem, 2vw, 2rem);
 				text-wrap: wrap;
 			}
 			p {
-				font-size: clamp(1rem, 1.3vw, 4rem);
+				font-size: clamp(0.1rem, 1vw, 2rem);
 				text-align: justify;
 
 				margin-block: 0.5%;
 			}
 		}
 		h1 {
-			font-size: clamp(1.4rem, 2vw, 5rem);
+			font-size: clamp(0.4rem, 2vw, 2rem);
 			font-family: "Forum";
-			margin-block: 2%;
+			margin-block: 1.5%;
 		}
 		.megaContainer {
 			.conteiner {
@@ -895,7 +870,7 @@ code {
 						background-color: #0000006e;
 
 						border-radius: 30px;
-						font-size: clamp(0.4rem, 1.5vw, 2rem);
+						font-size: clamp(0.1rem, 1.5vw, 2rem);
 					}
 				}
 			}
@@ -1001,12 +976,14 @@ code {
 				margin-block: 1%;
 			}
 			p {
-				font-size: clamp(0.3rem, 1.4vw, 4rem);
+				font-size: clamp(0.3rem, 1vw, 4rem);
 				text-align: justify;
 
 				margin-block: 0.5%;
 			}
 			.megacontainer {
+				display: flex;
+
 				.container {
 					display: flex;
 					padding: 1%;
@@ -1018,7 +995,7 @@ code {
 						h4 {
 							height: 45px;
 							margin: 0 30px 0 0;
-							font-size: clamp(0.3rem, 1.5vw, 4rem);
+							font-size: clamp(0.3rem, 1.2vw, 4rem);
 						}
 						img {
 							width: 70%;
@@ -1444,7 +1421,7 @@ code {
 		justify-content: flex-start;
 		.firstPageBox {
 			flex-direction: column;
-			padding: 1%;
+			padding: 0.5%;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
@@ -1457,7 +1434,7 @@ code {
 			}
 			.container {
 				justify-content: flex-start;
-
+				padding: 1.5%;
 				display: flex;
 				margin: 0 0;
 
@@ -1671,21 +1648,21 @@ code {
 			color: azure;
 			max-width: 80%;
 			padding: 20px;
-			margin-top: -110px;
+			
 			align-items: flex-end;
 			.containerH1 {
 				flex-direction: column;
 				display: flex;
 				text-align: end;
 				h1 {
-					font-size: clamp(0.9rem, 2vw, 4rem);
+					font-size: clamp(0.7rem, 1.5vw, 4rem);
 				}
 			}
 			p {
 				margin-top: 10px;
 				max-width: 100%;
 				text-align: justify;
-				font-size: clamp(0.7rem, 1vw, 2rem);
+				font-size: clamp(0.5rem, .9vw, 2rem);
 			}
 		}
 		.cart-container {
@@ -1813,12 +1790,13 @@ code {
 			align-items: flex-start;
 			flex-direction: column;
 			h1 {
-				font-size: clamp(1.4rem, 2vw, 4.5rem);
+				margin-top: 30px;
+				font-size: clamp(1.2rem, 1.9vw, 4.5rem);
 			}
 			.container {
 				margin-top: 2%;
 				display: grid;
-				grid-template-columns: 35% 35%;
+				grid-template-columns: 40% 40%;
 				gap: 5%;
 
 				.card {
@@ -1828,10 +1806,10 @@ code {
 					border-radius: 20px;
 					transition: all 0.3s ease-in-out;
 					h2 {
-						font-size: clamp(0.6rem, 1.4vw, 2.5rem);
+						font-size: clamp(0.5rem, 1.3vw, 2.5rem);
 					}
 					p {
-						font-size: clamp(0.3rem, .9vw, 2rem);
+						font-size: clamp(0.3rem, .8vw, 2rem);
 					}
 				}
 				.card:hover {
@@ -2031,7 +2009,7 @@ code {
 			align-items: center;
 			.content {
 				h1 {
-					font-size: clamp(1.2rem, 2.5vw, 3.5rem);
+					font-size: clamp(1rem, 2vw, 3.5rem);
 					padding-inline: 2%;
 				}
 				p {
@@ -2247,15 +2225,15 @@ code {
 				flex-direction: column;
 
 				h3 {
-					font-size: clamp(0.8rem, 1vw, 3rem);
-					margin-bottom: 20px;
+					font-size: clamp(0.6rem, 1vw, 3rem);
+					margin-bottom: 2%;
 				}
 				ul {
 					li {
 						font-size: clamp(0.4rem, 1vw, 1.2rem);
 						margin-left: 20px;
 					}
-					margin-bottom: 20px;
+					margin-bottom: 2%;
 				}
 				p {
 					font-size: clamp(0.6rem, 1.1vw, 2rem);
@@ -3429,7 +3407,7 @@ ul {
 				padding: 1%;
 				margin-block: 1.5%;
 				color: #ffffff;
-				font-size: clamp(0.7rem, 0.7vw, 2.8rem);
+				font-size: clamp(0.5rem, 0.4vw, 2.8rem);
 				z-index: 10000;
 
 				margin-top: 5%;

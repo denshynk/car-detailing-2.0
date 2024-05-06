@@ -308,7 +308,7 @@ const boxikRef = useRef(null);
 									<div className="container">
 										<div className="textArrow">
 											<h4>плюси даних систем</h4>
-											<img src="..//img/arrow.png" alt="arrow" />
+											{/* <img src="..//img/arrow.png" alt="arrow" /> */}
 										</div>
 										<ul>
 											<li>невисока вартість системи та встановлення</li>
@@ -319,7 +319,7 @@ const boxikRef = useRef(null);
 									<div className="container">
 										<div className="textArrow">
 											<h4>мінуси даних систем</h4>
-											<img src="..//img/arrow.png" alt="arrow" />
+											{/* <img src="..//img/arrow.png" alt="arrow" /> */}
 										</div>
 										<ul className="mt-10">
 											<li>

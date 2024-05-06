@@ -122,3 +122,43 @@
 	margin-top: -50px;
 	font-size: clamp(0.6rem, 0.25rem + 1.3333vw, 1rem);
 }
+
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон */
+	z-index: 9999; /* Поверх всех других элементов */
+}
+
+.modal-content {
+	display: flex;
+	justify-content: center;
+	max-width: 95%;
+	height: 70vh;
+	div {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			max-width: 100%; /* Максимальная ширина 100% контейнера */
+			max-height: 100%; /* Максимальная высота 100% контейнера */
+			object-fit: contain; /* Сохранение пропорций и полное помещение внутри контейнера */
+		}
+	}
+}
+
+.close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 35px;
+}

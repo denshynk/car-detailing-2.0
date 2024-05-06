@@ -11,17 +11,13 @@ import "swiper/css/navigation"; // стили для навигации
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "./modullesGalery.scss";
 
-
-
-
 const Galery = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section4 = useRef();
 	const boxikRef = useRef(null);
 	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const [imageData, setImageData] = useState([]);
 
@@ -54,6 +50,14 @@ const Galery = () => {
 		setSelectedImageIndex(index);
 	};
 
+	const handleImageClick = () => {
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+	};
+
 	return (
 		<>
 			<div
@@ -63,7 +67,7 @@ const Galery = () => {
 					backgroundImage: 'url("..//img/galery.jpg")',
 					backgroundPosition: "center",
 					backgroundSize: "cover",
-					backgroundRepeat:"no-repeat"
+					backgroundRepeat: "no-repeat",
 				}}
 			>
 				<div ref={section1}>
@@ -100,7 +104,11 @@ const Galery = () => {
 							>
 								{imageData.map((item, index) => (
 									<SwiperSlide key={index}>
-										<img src={item.src} alt={`Slide ${index}`} />
+										<img
+											src={item.src}
+											alt={`Slide ${index}`}
+											onClick={handleImageClick}
+										/>
 									</SwiperSlide>
 								))}
 								<div className="slider-controler">
@@ -125,6 +133,18 @@ const Galery = () => {
 					</Section>
 				</div>
 			</div>
+			{isModalOpen && (
+				<div className="modal">
+					<div className="modal-content">
+						<div>
+							<span className="close" onClick={handleCloseModal}>
+								&times;
+							</span>
+							<img src={imageData[selectedImageIndex]?.src} onClick={handleCloseModal} alt="Modal Image" />
+						</div>
+					</div>
+				</div>
+			)}
 		</>
 	);
 };
