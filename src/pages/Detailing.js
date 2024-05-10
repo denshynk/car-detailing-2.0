@@ -10,8 +10,10 @@ const Detailing = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
+	const section4 = useRef();
 	const lastSection = useRef();
 	const boxikRef = useRef(null);
+	const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -29,7 +31,7 @@ const Detailing = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: firstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -50,7 +52,7 @@ const Detailing = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: secondtRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -71,7 +73,7 @@ const Detailing = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: thirstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -92,7 +94,7 @@ const Detailing = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fourthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -113,7 +115,7 @@ const Detailing = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fifthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -224,7 +226,11 @@ const Detailing = () => {
 					</Section>
 				</div>
 				<div ref={section3}>
-					<Section showArrow={false} scrollTo={scrollTo}>
+					<Section
+						showArrow={true}
+						scrollTo={scrollTo}
+						goToSectionRef={section4}
+					>
 						<div
 							className="thirdPageDet"
 							style={{
@@ -260,8 +266,12 @@ const Detailing = () => {
 						</div>
 					</Section>
 				</div>
-				<div ref={section3}>
-					<Section showArrow={false} scrollTo={scrollTo}>
+				<div ref={section4}>
+					<Section
+						showArrow={false}
+						scrollTo={scrollTo}
+						goToSectionRef={lastSection}
+					>
 						<div
 							className="fourthPageDet"
 							style={{
@@ -322,7 +332,7 @@ const Detailing = () => {
 				</div>
 				<div ref={lastSection}>
 					<Section showArrow={false} goToSectionRef={section1}>
-						<Footer boxikRef={ boxikRef}/>
+						<Footer boxikRef={boxikRef} />
 					</Section>
 				</div>
 			</div>

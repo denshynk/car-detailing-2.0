@@ -15,7 +15,8 @@ const Save = () => {
 	const section6 = useRef();
 	const section7 = useRef();
 	const lastSection = useRef();
-const boxikRef = useRef(null);
+	const boxikRef = useRef(null);
+	const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -33,7 +34,7 @@ const boxikRef = useRef(null);
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: firstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -54,7 +55,7 @@ const boxikRef = useRef(null);
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: secondtRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -75,7 +76,7 @@ const boxikRef = useRef(null);
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: thirstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -96,7 +97,7 @@ const boxikRef = useRef(null);
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fourthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -117,7 +118,7 @@ const boxikRef = useRef(null);
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fifthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -207,7 +208,7 @@ const boxikRef = useRef(null);
 				</div>{" "}
 				<div ref={section3}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
@@ -274,7 +275,7 @@ const boxikRef = useRef(null);
 				</div>
 				<div ref={section4}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section5}
 						scrollTo={scrollTo}
 					>
@@ -338,7 +339,7 @@ const boxikRef = useRef(null);
 				</div>
 				<div ref={section5}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section6}
 						scrollTo={scrollTo}
 					>
@@ -437,7 +438,7 @@ const boxikRef = useRef(null);
 				</div>
 				<div ref={lastSection}>
 					<Section showArrow={false}>
-						<Footer boxikRef={ boxikRef} />
+						<Footer boxikRef={boxikRef} />
 					</Section>
 				</div>
 			</div>

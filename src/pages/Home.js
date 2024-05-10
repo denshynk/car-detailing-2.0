@@ -7,14 +7,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Link } from "react-router-dom";
 
-const Home = ({ setIsActiveLink, handleLinkClick }) => {
+const Home = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const section3 = useRef();
+	const section4 = useRef();
 	const lastSection = useRef();
 	const boxikRef = useRef(null);
 	gsap.registerPlugin(ScrollTrigger);
-
+	const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
@@ -32,36 +33,38 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 				opacity: 1,
 				x: 0,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: headlineRef.current,
 					start: "top center",
 					end: "bottom center",
+					
 				},
 			}
 		);
 	});
 
-		const secondRef = useRef();
-		useLayoutEffect(() => {
-			gsap.fromTo(
-				secondRef.current,
-				{
-					opacity: 0,
-					x: -100,
+	const secondRef = useRef();
+	useLayoutEffect(() => {
+		gsap.fromTo(
+			secondRef.current,
+			{
+				opacity: 0,
+				x: -100,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					scroller: containerClassName,
+					trigger: secondRef.current,
+					start: "top center",
+					end: "bottom center",
+					
 				},
-				{
-					opacity: 1,
-					x: 0,
-					duration: 1,
-					scrollTrigger: {
-						scroller: ".boxik",
-						trigger: secondRef.current,
-						start: "top center",
-						end: "bottom center",
-					},
-				}
-			);
-		});
+			}
+		);
+	});
 
 	const [isWideScreen, setIsWideScreen] = React.useState(
 		window.innerWidth > 600
@@ -72,7 +75,6 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 		const handleResize = () => {
 			setIsWideScreen(window.innerWidth > 600);
 		};
-
 		window.addEventListener("resize", handleResize);
 
 		return () => {
@@ -94,10 +96,11 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 				x: 0,
 				duration: 2,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: ImageRef.current,
 					start: "top center",
 					end: "bottom center",
+					
 				},
 			}
 		);
@@ -117,10 +120,11 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 				y: 0,
 				duration: 3,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: ImagePhone.current,
 					start: "top center",
 					end: "bottom center",
+					
 				},
 			}
 		);
@@ -139,11 +143,12 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 							<div clasname="mainpaeBackGround"></div>
 							<img
 								src={process.env.PUBLIC_URL + "/img/v_9_RGB.svg"}
-								className="animate__animated animate__flash"
 								alt="Logo"
 								width={"55%"}
 							/>
-
+							<a className="phone d-flex" href="tel:+380730040066">
+								+380730040066
+							</a>
 							<h1>КУЛЬТУРА АВТОБЕЗПЕКИ</h1>
 						</div>
 					</Section>
@@ -301,8 +306,8 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 				</div>
 				<div ref={section3}>
 					<Section
-						showArrow={false}
-						goToSectionRef={section1}
+						showArrow={true}
+						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
 						<div className="thirdpage">
@@ -327,7 +332,7 @@ const Home = ({ setIsActiveLink, handleLinkClick }) => {
 						</div>
 					</Section>
 				</div>
-				<div ref={section3}>
+				<div ref={section4}>
 					<Section
 						showArrow={false}
 						goToSectionRef={section1}

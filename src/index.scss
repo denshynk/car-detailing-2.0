@@ -45,7 +45,6 @@
 }
 
 body {
-	
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -73,16 +72,15 @@ code {
 		position: fixed;
 		justify-content: center;
 		.stuctureHeader {
-			top: 0px;
 			align-items: center;
-			padding-left: 25px;
-			padding-right: 25px;
+			padding-left: 15px;
+			padding-right: 15px;
 			display: flex;
 			align-items: center;
 		}
 		img {
-			margin-block: 1.5%;
-			width: 15%;
+			margin-block: 10%;
+			height: 7vh;
 		}
 	}
 }
@@ -116,6 +114,18 @@ code {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
+		color: #fafafa;
+		width: auto;
+	}
+	.vsicontany {
+		font-size: clamp(0.4rem, 1vw, 8rem);
+		font-family: "Forum";
+	}
+	.phone {
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	h1 {
 		color: #ffffff;
@@ -199,6 +209,12 @@ code {
 		img {
 			width: 45%;
 		}
+		.phone {
+			position: absolute;
+			bottom: 17%;
+			display: flex;
+			justify-content: center;
+		}
 		h1 {
 			position: absolute;
 			bottom: 11%;
@@ -213,6 +229,12 @@ code {
 		img {
 			width: 40%;
 		}
+		.phone {
+			position: absolute;
+			bottom: 35%;
+			display: flex;
+			justify-content: center;
+		}
 		h1 {
 			position: absolute;
 			bottom: 25%;
@@ -221,7 +243,6 @@ code {
 		}
 	}
 }
-
 
 @media (max-width: 560px) {
 	.mainpage {
@@ -232,8 +253,6 @@ code {
 		}
 	}
 }
-
-
 
 .mainpage {
 	height: 100vh;
@@ -249,18 +268,23 @@ code {
 	flex-direction: column;
 	img {
 	}
-
+	.phone {
+		font-size: clamp(1.3rem, 1.9vw, 8rem);
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+		text-shadow: 0px 1px 20px rgb(40, 144, 122);
+	}
 	h1 {
 		width: 100%;
 		text-align: center;
-		color: rgb(17, 143, 116);
+		color:  rgb(255, 255, 255);
 		font-family: "Forum";
 		display: flex;
 		align-items: center;
 		letter-spacing: 0.6rem;
 		font-weight: 1000;
-		font-size: clamp(1.5rem, 2vw, 8rem);
-		text-shadow: 5px 5px 20px rgba(28, 141, 43, 0.76);
+		font-size: clamp(1.8rem, 2.2vw, 8rem);
+		text-shadow: 0px 1px 65px rgba(40, 144, 122, 0.733);
 		// animation: blink-animation 0.1s infinite;
 	}
 	@keyframes blink-animation {
@@ -300,10 +324,10 @@ code {
 			width: 73%;
 			h1 {
 				width: 100%;
-				font-size: clamp(1rem, 5vw, 8rem);
+				font-size: clamp(1.1rem, 5vw, 8rem);
 			}
 			p {
-				font-size: clamp(0.6rem, 2vw, 8rem);
+				font-size: clamp(0.7rem, 2vw, 8rem);
 			}
 		}
 	}
@@ -319,7 +343,7 @@ code {
 				font-size: 3vh;
 			}
 			p {
-				font-size: 1.8vh;
+				font-size: clamp(0.1rem, 1.2vw, 2rem);
 			}
 		}
 	}
@@ -339,9 +363,11 @@ code {
 		color: azure;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			text-align: justify;
 		}
 		.content {
@@ -540,10 +566,11 @@ code {
 		justify-content: flex-end;
 
 		.Box {
+			margin-right: 10px;
 			padding: 2%;
 			width: 90%;
 			background-color: #000000c7;
-			margin-top:-100px;
+			margin-top: -100px;
 			h1 {
 				color: white;
 				font-family: "Forum";
@@ -554,7 +581,7 @@ code {
 			p {
 				margin-block: 1%;
 				color: white;
-				font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+				font-size: clamp(0.9rem, 1.6vw, 1.8rem);
 			}
 		}
 	}
@@ -603,7 +630,7 @@ code {
 
 	.Box {
 		position: absolute;
-		
+
 		flex-direction: column;
 		display: flex;
 		color: black;
@@ -624,7 +651,8 @@ code {
 		justify-content: flex-end;
 
 		.Box {
-			margin-top:-30px;
+			margin-right: 10px;
+			margin-top: -30px;
 			padding: 20px;
 			width: 90%;
 			background-color: #000000c7;
@@ -636,9 +664,9 @@ code {
 			}
 
 			p {
-			
+				margin-block: 2%;
 				color: white;
-				font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+				font-size: clamp(0.85rem, 1.5vw, 1.8rem);
 			}
 		}
 	}
@@ -686,7 +714,7 @@ code {
 
 	.Box {
 		position: absolute;
-		
+
 		flex-direction: column;
 		display: flex;
 		color: black;
@@ -765,7 +793,7 @@ code {
 				text-wrap: wrap;
 			}
 			p {
-				font-size: 1.6vh;
+				font-size: clamp(0.9rem, 1.6vw, 1.8rem);
 			}
 		}
 	}
@@ -851,16 +879,16 @@ code {
 				text-wrap: wrap;
 			}
 			p {
-				font-size: clamp(0.1rem, 1vw, 2rem);
+				font-size: clamp(0.1rem, 1.3vw, 2rem);
 				text-align: justify;
 
-				margin-block: 0.5%;
+				margin: 0.5%;
 			}
 		}
 		h1 {
 			font-size: clamp(0.4rem, 2vw, 2rem);
 			font-family: "Forum";
-			margin-block: 1.5%;
+			margin-block: 1%;
 		}
 		.megaContainer {
 			.conteiner {
@@ -885,8 +913,8 @@ code {
 		justify-content: center;
 		.Box {
 			margin-top: -120px;
-			width: 100%;
-
+			width: 95%;
+			m
 			h1 {
 				font-family: "Forum";
 				font-size: 2.7vh;
@@ -894,7 +922,7 @@ code {
 			}
 
 			p {
-				font-size: 1.5vh;
+				font-size: clamp(0.8rem, 1.5vw, 1.8rem);
 			}
 		}
 		h1 {
@@ -976,7 +1004,7 @@ code {
 				margin-block: 1%;
 			}
 			p {
-				font-size: clamp(0.3rem, 1vw, 4rem);
+				font-size: clamp(0.1rem, 1.3vw, 2rem);
 				text-align: justify;
 
 				margin-block: 0.5%;
@@ -1007,7 +1035,8 @@ code {
 						flex-direction: column;
 						align-items: flex-start;
 						li {
-							font-size: clamp(0.1rem, 1vw, 2rem);
+							margin-left: 1rem;
+							font-size: clamp(0.2rem, 1.2vw, 2rem);
 						}
 					}
 				}
@@ -1034,7 +1063,7 @@ code {
 			}
 			p {
 				margin-top: 10px;
-				font-size: clamp(0.6rem, 1vw, 3rem);
+				font-size: clamp(0.7rem, 1vw, 3rem);
 			}
 			.megacontainer {
 				.container {
@@ -1045,7 +1074,7 @@ code {
 						width: 45%;
 						align-items: flex-start;
 						h4 {
-							font-size: clamp(0.5rem, 2.5vw, 2rem);
+							font-size: clamp(0.6rem, 2.5vw, 2rem);
 						}
 						img {
 							width: 60%;
@@ -1057,7 +1086,7 @@ code {
 						flex-direction: column;
 						align-items: flex-start;
 						li {
-							font-size: clamp(0.3rem, 1.5vw, 2rem);
+							font-size: clamp(0.5rem, 1.5vw, 2rem);
 							text-align: flex-start;
 						}
 					}
@@ -1096,13 +1125,13 @@ code {
 			h1 {
 				font-family: "Forum";
 				text-align: center;
-				font-size: 4vh;
+				font-size: 4.4vh;
 			}
 			p {
 				margin-block: 10px;
 				text-align: justify;
 				font-family: "Arimo";
-				font-size: 2vh;
+				font-size: 14px;
 			}
 		}
 	}
@@ -1160,7 +1189,7 @@ code {
 			h1 {
 				font-family: "Forum";
 				text-align: center;
-				font-size: clamp(0.8rem, 3vw, 3.5rem);
+				font-size: clamp(1.2rem, 3vw, 3.5rem);
 			}
 			.containerSavePage {
 				z-index: 2;
@@ -1181,7 +1210,7 @@ code {
 					img {
 						width: 50px;
 						position: absolute;
-						top: -8%;
+						top: -2%;
 						left: -4%;
 						z-index: -90;
 						visibility: hidden;
@@ -1192,7 +1221,7 @@ code {
 					}
 					p {
 						text-align: center;
-						font-size: 1.1vh;
+						font-size: 1.3vh;
 					}
 				}
 				.card:hover {
@@ -1237,11 +1266,11 @@ code {
 					}
 					h2 {
 						text-align: center;
-						font-size: clamp(0.1rem, 1.3vw, 3rem);
+						font-size: clamp(0.1rem, 1.4vw, 3rem);
 					}
 					p {
 						text-align: center;
-						font-size: clamp(0.1rem, 0.8vw, 3rem);
+						font-size: clamp(0.1rem, 1vw, 3rem);
 					}
 				}
 				.card:hover {
@@ -1271,9 +1300,11 @@ code {
 		padding: 20px;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			text-align: justify;
 		}
 		.content {
@@ -1309,7 +1340,7 @@ code {
 				font-size: clamp(1.5rem, 2vw, 2rem);
 			}
 			p {
-				font-size: clamp(0.6rem, 2vw, 1rem);
+				font-size: clamp(0.76rem, 2vw, 1rem);
 			}
 		}
 	}
@@ -1328,7 +1359,7 @@ code {
 				font-size: clamp(0.1rem, 1.5vw, 2rem);
 			}
 			p {
-				font-size: clamp(0.1rem, 1vw, 2rem);
+				font-size: clamp(0.3rem, 1.2vw, 4rem);
 			}
 		}
 	}
@@ -1348,9 +1379,11 @@ code {
 		color: azure;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			text-align: justify;
 		}
 		.content {
@@ -1370,7 +1403,7 @@ code {
 			margin-top: -100px;
 			h1 {
 				align-content: center;
-				font-size: clamp(0.55rem, 2.1vw, 3rem);
+				font-size: clamp(0.7rem, 2.1vw, 3rem);
 			}
 			.container {
 				justify-content: flex-start;
@@ -1394,7 +1427,7 @@ code {
 					p {
 						text-align: center;
 						margin-bottom: 20px;
-						font-size: clamp(0.46rem, 1.5vw, 2rem);
+						font-size: clamp(0.6rem, 1.5vw, 2rem);
 					}
 					h1 {
 						position: absolute;
@@ -1403,7 +1436,7 @@ code {
 						padding: 10px;
 						bottom: -20px;
 						font-family: "Forum";
-						font-size: clamp(1rem, 2vw, 2rem);
+						font-size: clamp(0.9rem, 2vw, 2rem);
 						letter-spacing: 0.15rem;
 						font-weight: 100;
 						box-shadow: inset 0 0 0.1em 0.1em #fafafa2d;
@@ -1430,7 +1463,7 @@ code {
 				text-align: center;
 
 				align-content: center;
-				font-size: clamp(0.5rem, 1.2vw, 3rem);
+				font-size: clamp(0.5rem, 1.3vw, 3rem);
 			}
 			.container {
 				justify-content: flex-start;
@@ -1452,7 +1485,7 @@ code {
 					p {
 						text-align: center;
 						margin-bottom: 20px;
-						font-size: clamp(0.3rem, 0.9vw, 3rem);
+						font-size: clamp(0.3rem, 1vw, 3rem);
 					}
 					h1 {
 						position: absolute;
@@ -1488,6 +1521,7 @@ code {
 		padding: 20px;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 			color: #fafafa;
 		}
@@ -1510,6 +1544,7 @@ code {
 				display: flex;
 				ul {
 					li {
+						font-family: "Arimo";
 						margin-block: 3.5%;
 						font-size: clamp(0.45rem, 2.9vw, 1.9rem);
 					}
@@ -1530,15 +1565,16 @@ code {
 				display: flex;
 				ul {
 					li {
+						font-family: "Arimo";
 						margin-block: 2.5%;
-						font-size: clamp(0.4rem, 1vw, 4rem);
+						font-size: clamp(0.4rem, 1.2vw, 4rem);
 					}
 				}
 			}
 			h1 {
 				width: 50%;
 				align-content: center;
-				font-size: clamp(1rem, 4vw, 4rem);
+				font-size: clamp(1rem, 5vw, 4rem);
 			}
 		}
 	}
@@ -1562,9 +1598,11 @@ code {
 			text-align: center;
 		}
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			margin-block: 1.5%;
 			text-align: justify;
 		}
@@ -1603,7 +1641,7 @@ code {
 				font-size: clamp(1.4rem, 2vw, 2rem);
 			}
 			p {
-				font-size: clamp(0.75rem, 2vw, 1rem);
+				font-size: clamp(0.9rem, 2vw, 1rem);
 			}
 		}
 	}
@@ -1617,12 +1655,12 @@ code {
 			border-radius: 30px;
 			padding: 8%;
 			width: 70%;
-			margin-top: 2%;
+			margin-top: 5%;
 			h1 {
 				font-size: 4vh;
 			}
 			p {
-				font-size: 2.5vh;
+				font-size: clamp(0.3rem, 1.4vw, 4rem);
 			}
 		}
 	}
@@ -1648,21 +1686,23 @@ code {
 			color: azure;
 			max-width: 80%;
 			padding: 20px;
-			
+
 			align-items: flex-end;
 			.containerH1 {
 				flex-direction: column;
 				display: flex;
 				text-align: end;
 				h1 {
+					font-family: "Arimo";
 					font-size: clamp(0.7rem, 1.5vw, 4rem);
 				}
 			}
 			p {
+				font-family: "Arimo";
 				margin-top: 10px;
 				max-width: 100%;
 				text-align: justify;
-				font-size: clamp(0.5rem, .9vw, 2rem);
+				font-size: clamp(0.8rem, 1.5vw, 2rem);
 			}
 		}
 		.cart-container {
@@ -1674,10 +1714,11 @@ code {
 				padding: 10px;
 				margin-inline: 2%;
 				h2 {
+					font-family: "Arimo";
 					display: flex;
 					align-items: center;
 					text-align: center;
-					font-size: clamp(0.4rem, 1vw, 2rem);
+					font-size: clamp(0.6rem, 1vw, 2rem);
 					color: #fafafa;
 				}
 			}
@@ -1701,10 +1742,12 @@ code {
 				display: flex;
 				text-align: end;
 				h1 {
+					font-family: "Arimo";
 					font-size: clamp(1.5rem, 2vw, 4rem);
 				}
 			}
 			p {
+				font-family: "Arimo";
 				margin-top: 10px;
 				max-width: 64%;
 				text-align: justify;
@@ -1720,6 +1763,7 @@ code {
 				padding: 10px;
 				margin-inline: 20px;
 				h2 {
+					font-family: "Arimo";
 					display: flex;
 					align-items: center;
 					text-align: center;
@@ -1764,10 +1808,12 @@ code {
 
 					border-radius: 20px;
 					h2 {
-						font-size: clamp(0.7rem, 1.4vw, 2.5rem);
+						font-family: "Forum";
+						font-size: clamp(.9rem, 1.4vw, 2.5rem);
 					}
 					p {
-						font-size: clamp(0.45em, 1vw, 2rem);
+						font-family: "Arimo";
+						font-size: clamp(0.65em, 1vw, 2rem);
 					}
 				}
 				.card:hover {
@@ -1790,13 +1836,15 @@ code {
 			align-items: flex-start;
 			flex-direction: column;
 			h1 {
+				font-family: "Forum";
 				margin-top: 30px;
+				margin-left: 15px;
 				font-size: clamp(1.2rem, 1.9vw, 4.5rem);
 			}
 			.container {
 				margin-top: 2%;
 				display: grid;
-				grid-template-columns: 40% 40%;
+				grid-template-columns: 55% 55%;
 				gap: 5%;
 
 				.card {
@@ -1806,10 +1854,12 @@ code {
 					border-radius: 20px;
 					transition: all 0.3s ease-in-out;
 					h2 {
-						font-size: clamp(0.5rem, 1.3vw, 2.5rem);
+						font-family: "Forum";
+						font-size: clamp(0.5rem, 1.5vw, 2.5rem);
 					}
 					p {
-						font-size: clamp(0.3rem, .8vw, 2rem);
+						font-family: "Arimo";
+						font-size: clamp(0.3rem, 1.1vw, 2rem);
 					}
 				}
 				.card:hover {
@@ -1845,10 +1895,12 @@ code {
 				text-align: center;
 				width: 100%;
 				h1 {
+					font-family: "Forum";
 					font-size: clamp(1.5rem, 2vw, 2rem);
 				}
 				p {
-					font-size: clamp(0.6rem, 2vw, 1.3rem);
+					font-family: "Arimo";
+					font-size: clamp(1rem, 2vw, 1.3rem);
 				}
 			}
 			display: flex;
@@ -1887,10 +1939,12 @@ code {
 				padding: 2%;
 				border-radius: 20px;
 				h1 {
-					font-size: clamp(1.3rem, 2vw, 2rem);
+					font-family: "Forum";
+					font-size: clamp(1.3rem, 2.2vw, 3rem);
 				}
 				p {
-					font-size: clamp(0.5rem, 1.5vw, 1.3rem);
+					font-family: "Arimo";
+					font-size: clamp(0.5rem, 1.7vw, 1.3rem);
 				}
 			}
 			display: flex;
@@ -1933,9 +1987,11 @@ code {
 		padding: 3.5%;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			text-align: justify;
 		}
 		.content {
@@ -1975,7 +2031,7 @@ code {
 				}
 				p {
 					padding-inline: 3%;
-					font-size: clamp(0.7rem, 2vw, 2.5rem);
+					font-size: clamp(0.9rem, 2vw, 2.5rem);
 				}
 				h2 {
 					font-size: clamp(0.8rem, 2vw, 1.5rem);
@@ -1989,7 +2045,7 @@ code {
 					border-radius: 30px;
 
 					li {
-						font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+						font-size: clamp(0.6rem, 1.5vw, 1.5rem);
 						margin-left: 20px;
 					}
 				}
@@ -2051,6 +2107,7 @@ code {
 		flex-direction: column;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 	}
@@ -2062,11 +2119,11 @@ code {
 		display: flex;
 		align-items: center;
 		.firstPageBox {
-			margin-top: -40px;
+			
 			h1 {
 				margin-top: -50px;
 				padding-inline: 3%;
-				font-size: clamp(1rem, 1.5vw, 3rem);
+				font-size: clamp(1.5rem, 2.5vw, 3rem);
 			}
 			.container-cart {
 				display: flex;
@@ -2095,7 +2152,8 @@ code {
 						left: -8%;
 					}
 					p {
-						font-size: clamp(0.45rem, 1vw, 3rem);
+						font-family: "Arimo";
+						font-size: clamp(0.6rem, 1vw, 3rem);
 					}
 					img {
 						width: 40%;
@@ -2115,7 +2173,7 @@ code {
 		align-items: center;
 		.firstPageBox {
 			.textH1 {
-				font-size: clamp(1.2rem, 2vw, 4rem);
+				font-size: clamp(0.5rem, 1.7vw, 4rem);
 				background-color: #000000c1;
 				text-shadow: 5px 5px 5px #000000;
 				padding-block: 1%;
@@ -2141,6 +2199,7 @@ code {
 						left: -8%;
 					}
 					p {
+						font-family: "Arimo";
 						font-size: clamp(0.3rem, 0.8vw, 2.5rem);
 					}
 					img {
@@ -2170,6 +2229,7 @@ code {
 		flex-direction: column;
 
 		h1 {
+			font-family: "Arimo";
 			text-align: center;
 		}
 	}
@@ -2181,29 +2241,31 @@ code {
 		.firstPageBox {
 			padding: 3.5%;
 			align-items: flex-end;
-			margin-top: -100px;
+			
 			.content {
 				background-color: #00000079;
-				padding: 2%;
+				padding: 5%;
 				border-radius: 30px;
 				width: 100%;
 				display: flex;
 				flex-direction: column;
 
 				h3 {
+					font-family: "Arimo";
 					text-align: center;
-					font-size: clamp(0.9rem, 3vw, 2.7rem);
+					font-size: clamp(1rem, 3vw, 2.7rem);
 					margin-bottom: 20px;
 				}
 				ul {
 					li {
-						font-size: clamp(0.6rem, 2vw, 2.4rem);
+						font-size: clamp(0.7rem, 2vw, 2.4rem);
 						margin-left: 20px;
 					}
 					margin-bottom: 20px;
 				}
 				p {
-					font-size: clamp(0.7rem, 2vw, 2.6rem);
+					font-family: "Arimo";
+					font-size: clamp(0.8rem, 2vw, 2.6rem);
 				}
 			}
 		}
@@ -2225,18 +2287,20 @@ code {
 				flex-direction: column;
 
 				h3 {
-					font-size: clamp(0.6rem, 1vw, 3rem);
+					font-family: "Arimo";
+					font-size: clamp(0.6rem, 1.5vw, 3rem);
 					margin-bottom: 2%;
 				}
 				ul {
 					li {
-						font-size: clamp(0.4rem, 1vw, 1.2rem);
+						font-size: clamp(0.4rem, 1.2vw, 1.2rem);
 						margin-left: 20px;
 					}
 					margin-bottom: 2%;
 				}
 				p {
-					font-size: clamp(0.6rem, 1.1vw, 2rem);
+					font-family: "Arimo";
+					font-size: clamp(0.6rem, 1.3vw, 2rem);
 				}
 			}
 		}
@@ -2255,6 +2319,7 @@ code {
 		color: azure;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 	}
@@ -2280,13 +2345,14 @@ code {
 				h1 {
 					font-size: clamp(0.9rem, 4vw, 2.2rem);
 				}
-				font-size: clamp(0.45rem, 1.5vw, 0.9rem);
+				font-size: clamp(0.7rem, 1.5vw, 2rem);
 				.conatainer {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
 
 					p {
+						font-family: "Arimo";
 						margin-block: 0.5%;
 					}
 					img {
@@ -2305,15 +2371,16 @@ code {
 				background-color: #00000079;
 				h1 {
 					border-bottom: 1px solid #fafafa;
-					font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+					font-size: clamp(0.9rem, 4vw, 2.2rem);
 					margin-bottom: 1%;
 				}
 
 				ul {
 					padding-inline: 8%;
 					li {
-						font-size: clamp(0.5rem, 1.5vw, 0.9rem);
-						margin-block: 0.5%;
+						font-family: "Arimo";
+						font-size: clamp(0.7rem, 1.5vw, 2rem);
+						margin-block: 2%;
 					}
 				}
 			}
@@ -2346,6 +2413,7 @@ code {
 					display: flex;
 					margin-bottom: 1%;
 					p {
+						font-family: "Arimo";
 						padding: 2%;
 						font-size: clamp(0.5rem, 1.2vw, 3rem);
 					}
@@ -2356,6 +2424,7 @@ code {
 					}
 				}
 				p {
+					font-family: "Arimo";
 					padding: 2%;
 					font-size: clamp(0.5rem, 1.2vw, 3rem);
 				}
@@ -2376,7 +2445,8 @@ code {
 
 				ul {
 					li {
-						font-size: clamp(0.5rem, 1vw, 4rem);
+						font-family: "Arimo";
+						font-size: clamp(0.5rem, 1.2vw, 4rem);
 						margin-block: 2%;
 					}
 				}
@@ -2401,9 +2471,11 @@ code {
 		padding: 2%;
 
 		h1 {
+			font-family: "Forum";
 			text-align: center;
 		}
 		p {
+			font-family: "Arimo";
 			text-align: justify;
 		}
 		.content {
@@ -2501,7 +2573,7 @@ code {
 		display: flex;
 		color: azure;
 		flex-direction: column;
-
+		font-family: "Arimo";
 		h1 {
 			text-align: center;
 		}
@@ -2525,7 +2597,7 @@ code {
 				margin-inline: 1%;
 				li {
 					margin-block: 2%;
-					font-size: clamp(0.55rem, 1.5vw, 1rem);
+					font-size: clamp(0.7rem, 2.5vw, 3rem);
 				}
 			}
 		}
@@ -2563,7 +2635,7 @@ code {
 	.firstPageBox {
 		display: flex;
 		color: azure;
-
+		font-family: "Arimo";
 		padding: 20px;
 	}
 }
@@ -2651,6 +2723,140 @@ code {
 	}
 }
 
+@media (max-width: 1000px) {
+	.firstPageContacts {
+		.contacts {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 1000px) {
+	.firstPageContacts {
+		.contacts {
+			width: 1000px;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.contactContainer {
+		flex-direction: column;
+	}
+}
+
+.firstPageContacts {
+	background-color: rgb(42, 42, 42);
+	display: flex;
+	min-height: 100vh;
+	width: 100%;
+	.map-container {
+		overflow: hidden;
+		height: 30vh;
+	}
+
+	.map-container iframe {
+		left: 0;
+		top: 85px;
+		border: 0;
+		height: 50vh;
+		width: 100%;
+		position: absolute;
+	}
+
+	a {
+		text-decoration: none;
+	}
+	.contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		padding-inline: 3.5%;
+
+		justify-content: flex-start;
+		h1 {
+			text-decoration: none;
+			width: 100%;
+			padding: 1%;
+			border-radius: 6px;
+			text-align: center;
+			background: rgb(255, 255, 255);
+			background: -moz-linear-gradient(
+				207deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(77, 172, 155, 1) 71%
+			);
+			background: -webkit-linear-gradient(
+				207deg,
+				rgba(77, 172, 155, 1) 71% rgba(77, 172, 155, 1) 71%
+			);
+			background: linear-gradient(
+				207deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(77, 172, 155, 1) 41%
+			);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#4dac9b",GradientType=1);
+
+			font-size: 1.6rem;
+			line-height: 1.4;
+			color: #fafafa;
+			box-shadow: 0 10px 20px rgba(164, 169, 255, 0.168);
+		}
+		.single-cta {
+			padding: 1.2rem 1rem;
+			border-radius: 6px;
+			color: var(--light-col);
+			display: flex;
+			box-shadow: 0 10px 20px rgba(164, 168, 255, 0.2);
+			font-size: 1.1rem;
+			text-decoration: none;
+
+			font-weight: var(--bold);
+			transition: all 1s ease-in-out;
+			span {
+				padding-left: 0.2rem;
+				position: relative;
+				width: 100%;
+				line-height: 1;
+				color: #ffffff;
+				font-size: 0.9rem;
+				p {
+					margin: 0;
+					line-height: 1.4;
+					font-size: 0.9rem;
+					display: block;
+				}
+			}
+		}
+		.single-cta:hover {
+			background: rgb(255, 255, 255);
+			background: -moz-linear-gradient(
+				207deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(77, 172, 155, 1) 71%
+			);
+			background: -webkit-linear-gradient(
+				207deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(77, 172, 155, 1) 71%
+			);
+			background: linear-gradient(
+				207deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(77, 172, 155, 1) 71%
+			);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#4dac9b",GradientType=1);
+		}
+	}
+}
+.single-ctas {
+	margin-block: 4%;
+	width: 100%;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 @media (min-width: 750px) {
 	.btn {
 		font-size: clamp(0.1rem, 1vw, 1rem);
@@ -2707,7 +2913,7 @@ code {
 				margin-top: 2%;
 				z-index: 10;
 				position: relative;
-				padding: 15px 0 0;
+				padding: 5% 0 0;
 			}
 
 			.form__field {
@@ -2804,13 +3010,14 @@ code {
 				content: "";
 				position: absolute;
 				inset: 0;
+				z-index: 99999;
 			}
 
 			.btn::before {
 				background: var(--border-color);
 				background-size: 300% 300%;
 				animation: move-bg7234 5s ease infinite;
-				z-index: -2;
+				z-index: -1;
 			}
 
 			@keyframes move-bg7234 {
@@ -3202,11 +3409,11 @@ ul {
 		.footer-cta {
 			.cta-text {
 				h4 {
-					font-size: clamp(1rem, 1vw, 1.5rem);
+					font-size: clamp(1.1rem, 1.1vw, 1.5rem);
 				}
 
 				span {
-					font-size: clamp(0.7rem, 1vw, 1.1rem);
+					font-size: clamp(0.85rem, 1vw, 1.1rem);
 				}
 			}
 		}
@@ -3269,11 +3476,11 @@ ul {
 		.footer-cta {
 			.cta-text {
 				h4 {
-					font-size: clamp(0.9rem, 2vw, 1.5rem);
+					font-size: clamp(0.9rem, 1.5vw, 1.3rem);
 				}
 
 				span {
-					font-size: clamp(0.6rem, 1vw, 1.1rem);
+					font-size: clamp(0.8rem, 0.8vw, 1rem);
 				}
 			}
 		}
@@ -3284,7 +3491,7 @@ ul {
 
 			color: #fafafa;
 			p {
-				
+				width: 100%;
 				text-align: center;
 				background-color: #000000c7;
 				border-radius: 20px;
@@ -3294,7 +3501,7 @@ ul {
 				font-size: clamp(0.7rem, 0.7vw, 2.8rem);
 				z-index: 10000;
 				margin-inline: 1.5%;
-				
+
 				--border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
 				--border-width: 0.125em;
 				--curve-size: 0.5em;
@@ -3372,7 +3579,6 @@ ul {
 		display: grid;
 		flex-direction: row;
 		justify-content: center;
-		align-items: end;
 		grid-template-columns: 30% 30% 30%;
 	}
 }
@@ -3401,13 +3607,14 @@ ul {
 
 		.footer-last-text {
 			p {
+				width: 100%;
 				text-align: center;
 				background-color: #000000c7;
 				border-radius: 20px;
 				padding: 1%;
 				margin-block: 1.5%;
 				color: #ffffff;
-				font-size: clamp(0.5rem, 0.4vw, 2.8rem);
+				font-size: clamp(0.8rem, 1vw, 2.8rem);
 				z-index: 10000;
 
 				margin-top: 5%;
@@ -3639,7 +3846,6 @@ ul {
 	}
 }
 
-
 .hamburger {
 	height: 45px;
 	width: 45px;
@@ -3692,13 +3898,13 @@ ul {
 	overflow: hidden;
 	right: 30px;
 	z-index: 999;
-	width: 50px;
-	height: 50px;
+	width: 65px;
+	height: 65px;
 	border-radius: 100%;
 
 	button {
 		padding: auto;
-		font-size: 9px;
+		font-size: 12px;
 		background: rgb(148, 13, 29);
 		background: linear-gradient(
 			270deg,

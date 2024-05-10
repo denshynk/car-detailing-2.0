@@ -18,7 +18,7 @@ const Galery = () => {
 	const boxikRef = useRef(null);
 	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-
+	const swiperRef = useRef(null);
 	const [imageData, setImageData] = useState([]);
 
 	React.useEffect(() => {
@@ -40,7 +40,7 @@ const Galery = () => {
 
 		fetchImageData();
 	}, []);
-	console.log(imageData);
+	console.log(swiperRef.current);
 
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
@@ -50,7 +50,8 @@ const Galery = () => {
 		setSelectedImageIndex(index);
 	};
 
-	const handleImageClick = () => {
+	const handleImageClick = (index) => {
+		setSelectedImageIndex(index);
 		setIsModalOpen(true);
 	};
 
@@ -79,10 +80,13 @@ const Galery = () => {
 						<div className="container">
 							<h1 className="heading"> Нашi роботи</h1>
 							<Swiper
+								allowSlideNext={true}
 								effect={"coverflow"}
 								grabCursor={true}
 								centeredSlides={true}
 								loop={true}
+								allowTouchMove={true}
+								slideToClickedSlide={true}
 								slidesPerView={"auto"}
 								coverflowEffect={{
 									rotate: 0,
@@ -103,11 +107,11 @@ const Galery = () => {
 								}}
 							>
 								{imageData.map((item, index) => (
-									<SwiperSlide key={index}>
+									<SwiperSlide key={index} ref={swiperRef}>
 										<img
 											src={item.src}
 											alt={`Slide ${index}`}
-											onClick={handleImageClick}
+											onClick={() => handleImageClick(index)}
 										/>
 									</SwiperSlide>
 								))}
@@ -140,7 +144,11 @@ const Galery = () => {
 							<span className="close" onClick={handleCloseModal}>
 								&times;
 							</span>
-							<img src={imageData[selectedImageIndex]?.src} onClick={handleCloseModal} alt="Modal Image" />
+							<img
+								src={imageData[selectedImageIndex]?.src}
+								onClick={handleCloseModal}
+								alt="ModalImage"
+							/>
 						</div>
 					</div>
 				</div>

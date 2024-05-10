@@ -10,11 +10,12 @@ const DopPoslugy = () => {
 	const section1 = useRef();
 	const section2 = useRef();
 	const lastSection = useRef();
-	const section4 = useRef();
+
 	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
 	}
+	const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	gsap.registerPlugin(ScrollTrigger);
 	const firstRef = useRef();
 	React.useLayoutEffect(() => {
@@ -29,7 +30,7 @@ const DopPoslugy = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: firstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -50,7 +51,7 @@ const DopPoslugy = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: secondtRef.current,
 					start: "top center",
 					end: "bottom center",

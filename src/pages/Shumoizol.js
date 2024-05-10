@@ -11,7 +11,7 @@ const Shumoizol = () => {
 	const section2 = useRef();
 	const section3 = useRef();
 	const lastSection = useRef();
-
+	const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
@@ -31,7 +31,7 @@ const Shumoizol = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: firstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -52,7 +52,7 @@ const Shumoizol = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: secondtRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -73,7 +73,7 @@ const Shumoizol = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: thirstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -188,7 +188,7 @@ const Shumoizol = () => {
 				</div>
 				<div ref={section3}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={lastSection}
 						scrollTo={scrollTo}
 					>

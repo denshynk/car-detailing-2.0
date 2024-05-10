@@ -1,10 +1,14 @@
 import React from "react";
-
 import styles from "./Drawer2.module.scss";
 
-function Drawer({ opened, onClose, handleChange, handleSubmit, formData, drawerTop }) {
-
-	
+function Drawer({
+	opened,
+	onClose,
+	handleChange,
+	handleSubmit,
+	formData,
+	drawerTop,
+}) {
 	return (
 		<div
 			className={`${styles.overlay} ${opened ? styles.overlayVisible : ""}`}
@@ -48,12 +52,15 @@ function Drawer({ opened, onClose, handleChange, handleSubmit, formData, drawerT
 											Ваше ім’я *
 										</label>
 									</div>
+
 									<div className="form__group_phone field_phone">
 										<input
-											type="text"
+											type="tel"
 											className="form__field_phone"
 											placeholder="phoneNumber"
+											pattern="\+380\d{9}"
 											required=""
+											value={formData.phoneNumber}
 											onChange={handleChange}
 										/>
 										<label htmlFor="name" className="form__label_phone">

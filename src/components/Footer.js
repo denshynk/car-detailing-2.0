@@ -12,10 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Section from "./Section";
 
-function Footer({ boxikRef }) {
+function Footer() {
 	const [formData, setFormData] = React.useState({
 		firstName: "",
-		phoneNumber: "",
+		phoneNumber: "380",
 		email: "",
 		coment: "",
 	});
@@ -35,11 +35,21 @@ function Footer({ boxikRef }) {
 		};
 	}, []);
 
+const handleChange = (e) => {
+	const { placeholder, value } = e.target; // Исправлено использование placeholder на name
 
-	const handleChange = (e) => {
-		const { placeholder, value } = e.target; // Исправлено использование placeholder на name
-		setFormData({ ...formData, [placeholder]: value }); // Исправлено использование placeholder на name
-	};
+	if (placeholder === "phoneNumber") {
+		const phoneNumber = value.replace(/\D/g, "");
+
+		const formattedPhoneNumber = phoneNumber.slice(0, 12);
+
+		// Обновляем состояние с форматированным номером
+		setFormData({ ...formData, [placeholder]: formattedPhoneNumber });
+	} else {
+		// Для других полей просто обновляем значение в состоянии
+		setFormData({ ...formData, [placeholder]: value });
+	}
+};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -62,7 +72,7 @@ function Footer({ boxikRef }) {
 			}
 		} else {
 			alert(
-				"Пожалуйста, заполните все поля, или проверьте правильность написанного номера."
+				"Будь ласка, заповніть усі поля або перевірте правильність написаного номера."
 			);
 		}
 	};
@@ -198,10 +208,12 @@ function Footer({ boxikRef }) {
 								</div>
 								<div className="form__group field">
 									<input
-										type="text"
+										type="tel"
 										className="form__field"
 										placeholder="phoneNumber"
+										pattern="\+380\d{9}"
 										required=""
+										value={formData.phoneNumber}
 										onChange={handleChange}
 									/>
 									<label htmlFor="name" className="form__label">

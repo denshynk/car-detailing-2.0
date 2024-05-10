@@ -77,10 +77,12 @@ function Drawer({ opened, onClose, handleChange, handleSubmit, formData }) {
 										</div>
 										<div className="form__group_phone field_phone">
 											<input
-												type="text"
+												type="tel"
 												className="form__field_phone"
 												placeholder="phoneNumber"
+												pattern="\+380\d{9}"
 												required=""
+												value={formData.phoneNumber}
 												onChange={handleChange}
 											/>
 											<label htmlFor="name" className="form__label_phone">

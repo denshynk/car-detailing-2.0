@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./Drawer.module.scss";
 
-function Drawer({
-	opened,
-	handleLinkClick,
-	toggleBasket,
-	drawerTop,
-}) {
+function Drawer({ opened, handleLinkClick, toggleBasket, drawerTop }) {
 	return (
 		<div
 			className={`${styles.overlay} ${opened ? styles.overlayVisible : ""}`}
@@ -89,6 +84,15 @@ function Drawer({
 					>
 						Галерея
 					</Link>
+					<Link
+						to="/contacts"
+						onClick={() => {
+							handleLinkClick("/contacts");
+							toggleBasket();
+						}}
+					>
+						Всі контакти
+					</Link>
 
 					<div className="contentBasket d-flex">
 						<div className="d-flex flex-column w100p justify-around">
@@ -150,7 +154,7 @@ function Drawer({
 											alt="Inst"
 										/>
 									</a>
-									<a
+									{/* <a
 										className="d-flex"
 										style={{ width: "30px" }}
 										href="https://www.tiktok.com/@autosafeculture"
@@ -163,7 +167,7 @@ function Drawer({
 											src={process.env.PUBLIC_URL + "/img/tik-tok.png"}
 											alt="TikTok"
 										/>
-									</a>
+									</a> */}
 								</div>
 							</div>
 						</div>

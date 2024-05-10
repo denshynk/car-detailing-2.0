@@ -26,6 +26,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 				setDrawerTop(headerHeight);
 			}
 		};
+	
 
 		// Создание нового экземпляра MutationObserver
 		const observer = new MutationObserver(updateDrawerTop);
@@ -66,11 +67,12 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 							>
 								<img
 									src={process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"}
-									className="animate__animated animate__flash"
 									alt="Logo"
-									width={"100px"}
 								/>
 							</Link>
+							<a className="phone d-flex" href="tel:+380730040066">
+								+380730040066
+							</a>
 							<div className="hamburger">
 								<input
 									className="checkbox"
@@ -128,23 +130,33 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 						src={process.env.PUBLIC_URL + "/img/ASC_logo_5_RGB.svg"}
 						className="animate__animated animate__flash"
 						alt="Logo"
-						width={"22%"}
+						width={"25%"}
 					/>
 				</Link>
 
 				<div className="d-flex flex-column w100p justify-around ">
-					<div className="d-flex justify-end ">
-						<div className=" contact">
+					<div className="d-flex justify-end mb-20">
+						<div className=" contact align-end">
+							<Link
+								className="vsicontany"
+								style={{
+									textTransform: "uppercase",
+								}}
+								to="/contacts"
+								onClick={() => handleLinkClick("/save")}
+							>
+								Всі контакти
+							</Link>
 							<a
 								className="d-flex"
-								style={{ width: "20px" }}
+								style={{ width: "25px" }}
 								href="https://g.co/kgs/HgQFxDY"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<img
-									width="20px"
-									height="20px"
+									width="25px"
+									height="25px"
 									src={process.env.PUBLIC_URL + "/img/Maps.png"}
 									alt="Maps"
 								/>
@@ -152,59 +164,59 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 
 							<a
 								className="d-flex"
-								style={{ width: "20px" }}
+								style={{ width: "25px" }}
 								href="https://t.me/AutoSafeCulture"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<img
-									width={"20px"}
-									height={"20px"}
+									width={"25px"}
+									height={"25px"}
 									src={process.env.PUBLIC_URL + "/img/Telegram.svg"}
 									alt="Telegram"
 								/>
 							</a>
 							<a
 								className="d-flex"
-								style={{ width: "20px" }}
+								style={{ width: "25px" }}
 								href="viber://chat?number=+380730040066"
 								rel="noopener noreferrer"
 							>
 								<img
-									width={"20px"}
-									height={"20px"}
+									width={"25px"}
+									height={"25px"}
 									src={process.env.PUBLIC_URL + "/img/Viber.png"}
 									alt="Viber"
 								/>
 							</a>
 							<a
 								className="d-flex"
-								style={{ width: "20px" }}
+								style={{ width: "25px" }}
 								href="https://www.instagram.com/auto.safe.culture?igsh=MTBoa2xqcXdiN3ZjMg=="
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<img
-									width={"20px"}
-									height={"20px"}
+									width={"25px"}
+									height={"25px"}
 									src={process.env.PUBLIC_URL + "/img/instagram.png"}
 									alt="Inst"
 								/>
 							</a>
-							<a
+							{/* <a
 								className="d-flex"
-								style={{ width: "20px" }}
+								style={{ width: "25px" }}
 								href="https://www.tiktok.com/@autosafeculture"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<img
-									width={"20px"}
-									height={"20px"}
+									width={"25px"}
+									height={"25px"}
 									src={process.env.PUBLIC_URL + "/img/tik-tok.png"}
 									alt="TikTok"
 								/>
-							</a>
+							</a> */}
 						</div>
 					</div>
 					<div className=" d-flex justify-end">
@@ -258,6 +270,7 @@ function Header({ isWideScreen, scrolTo, setDrawerTop, drawerTop, isActiveLink,s
 							>
 								Галерея
 							</Link>
+							
 						</div>
 					</div>
 				</div>

@@ -16,6 +16,8 @@ import Drawer2 from "./components/Drawer2/index.js";
 import DopPoslugy from "./pages/DopPoslugy.js";
 import FAQ from "./pages/FAQ.js";
 import DesktopCallBack from "./components/DesktopCallBack/index.js";
+import Contacts from "./pages/Contacts.js";
+import GoogleTagManager from "./components/GoogleTagManager.js";
 
 function App() {
 	const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
@@ -23,14 +25,25 @@ function App() {
 	const [callBackDesktopOpen, setCallBackDesktopOpen] = useState(false);
 	const [formData, setFormData] = React.useState({
 		firstName: "",
-		phoneNumber: "",
+		phoneNumber: "380",
 		email: "",
-		comment: "", // Исправлено опечатку в названии поля
+		comment: "",
 	});
 
 	const handleChange = (e) => {
 		const { placeholder, value } = e.target; // Исправлено использование placeholder на name
-		setFormData({ ...formData, [placeholder]: value }); // Исправлено использование placeholder на name
+
+		if (placeholder === "phoneNumber") {
+			const phoneNumber = value.replace(/\D/g, "");
+
+			const formattedPhoneNumber = phoneNumber.slice(0, 12);
+
+			// Обновляем состояние с форматированным номером
+			setFormData({ ...formData, [placeholder]: formattedPhoneNumber });
+		} else {
+			// Для других полей просто обновляем значение в состоянии
+			setFormData({ ...formData, [placeholder]: value });
+		}
 	};
 
 	const handleSubmit = async (e) => {
@@ -38,7 +51,6 @@ function App() {
 
 		if (formData.phoneNumber && formData.firstName) {
 			try {
-				console.log(formData);
 				const response = await axios.post(
 					"https://server.autosafeculture.com/callBack",
 					formData
@@ -55,7 +67,7 @@ function App() {
 			}
 		} else {
 			alert(
-				"Пожалуйста, заполните все поля, или проверьте правильность написанного номера."
+				"Будь ласка, заповніть усі поля або перевірте правильність написаного номера."
 			);
 		}
 	};
@@ -66,6 +78,7 @@ function App() {
 		};
 
 		window.addEventListener("resize", handleResize);
+		handleResize();
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
@@ -107,12 +120,12 @@ function App() {
 	const [isActiveLink, setIsActiveLink] = useState(null);
 	const handleLinkClick = (link) => {
 		setIsActiveLink(link);
+		window.scrollTo(0, 0);
 	};
-
-	
 
 	return (
 		<>
+			{/* <GoogleTagManager /> */}
 			{loading && <LoadingPage />}
 			<CallBackBTN
 				isWideScreen={isWideScreen}
@@ -128,50 +141,52 @@ function App() {
 				formData={formData}
 				setFormData={setFormData}
 			/>
-		
-				<div className="secret">
-					{/* Привязываем ref к Header */}
-					<Header
-						isWideScreen={isWideScreen}
-						scrolTo={scrolTo}
-						setDrawerTop={setDrawerTop}
-						drawerTop={drawerTop}
-						isActiveLink={isActiveLink}
-						setIsActiveLink={setIsActiveLink}
-						handleLinkClick={handleLinkClick}
+			<div className="secret">
+				{/* Привязываем ref к Header */}
+				<Header
+					isWideScreen={isWideScreen}
+					scrolTo={scrolTo}
+					setDrawerTop={setDrawerTop}
+					drawerTop={drawerTop}
+					isActiveLink={isActiveLink}
+					setIsActiveLink={setIsActiveLink}
+					handleLinkClick={handleLinkClick}
+				/>
+				{/* Устанавливаем top для Drawer с учетом полученной высоты */}
+				<Drawer2
+					drawerTop={drawerTop}
+					opened={callBackOpen}
+					onClose={closeCallBack}
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+					formData={formData}
+					setFormData={setFormData}
+				/>
+			</div>
+			<AnimatePresence mode="wait">
+				<Routes location={location} key={location.pathname}>
+					<Route
+						index
+						element={
+							<Home
+								setIsActiveLink={setIsActiveLink}
+								handleLinkClick={handleLinkClick}
+							/>
+						}
 					/>
-					{/* Устанавливаем top для Drawer с учетом полученной высоты */}
-					<Drawer2
-						drawerTop={drawerTop}
-						opened={callBackOpen}
-						onClose={closeCallBack}
-						handleChange={handleChange}
-						handleSubmit={handleSubmit}
-						formData={formData}
-						setFormData={setFormData}
+					<Route path="/save" element={<Save />} />
+					<Route path="/detailing" element={<Detailing />} />
+					<Route path="/shumoizol" element={<Shumoizol />} />
+					<Route path="/zahysnaplivka" element={<ZahysnaPlivka />} />
+					<Route path="/dodatkoviposlugy" element={<DopPoslugy />} />
+					<Route path="/faq" element={<FAQ />} />
+					<Route path="/galery" element={<Galery />} />
+					<Route
+						path="/contacts"
+						element={<Contacts drawerTop={drawerTop} />}
 					/>
-				</div>
-				<AnimatePresence mode="wait">
-					<Routes location={location} key={location.pathname}>
-						<Route
-							index
-							element={
-								<Home
-									setIsActiveLink={setIsActiveLink}
-									handleLinkClick={handleLinkClick}
-								/>
-							}
-						/>
-						<Route path="/save" element={<Save />} />
-						<Route path="/detailing" element={<Detailing />} />
-						<Route path="/shumoizol" element={<Shumoizol />} />
-						<Route path="/zahysnaplivka" element={<ZahysnaPlivka />} />
-						<Route path="/dodatkoviposlugy" element={<DopPoslugy />} />
-						<Route path="/faq" element={<FAQ />} drawerTop={drawerTop} />
-						<Route path="/galery" element={<Galery />} />
-					</Routes>
-				</AnimatePresence>
-	
+				</Routes>
+			</AnimatePresence>
 		</>
 	);
 }

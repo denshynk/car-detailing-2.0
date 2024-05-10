@@ -5,7 +5,7 @@
 }
 
 .heading {
-	margin-top: 7%;
+	margin-top: 50px;
 	padding: 1rem 0;
 	font-size: clamp(1.4rem, 3.5vw, 8rem);
 	text-align: center;
@@ -119,6 +119,7 @@
 	justify-content: center;
 	text-align: center;
 	padding: 2.5%;
+	font-family: "Arimo";
 	margin-top: -50px;
 	font-size: clamp(0.6rem, 0.25rem + 1.3333vw, 1rem);
 }
@@ -143,9 +144,7 @@
 	height: 70vh;
 	div {
 		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+
 		img {
 			max-width: 100%; /* Максимальная ширина 100% контейнера */
 			max-height: 100%; /* Максимальная высота 100% контейнера */
@@ -157,7 +156,7 @@
 .close {
 	position: absolute;
 	top: 5px;
-	right: 5px;
+	right: 10px;
 	cursor: pointer;
 	color: #ffffff;
 	font-size: 35px;

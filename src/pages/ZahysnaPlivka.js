@@ -13,7 +13,7 @@ const ZahysnaPlivka = () => {
 	const section4 = useRef();
 	const section5 = useRef();
 	const lastSection = useRef();
-
+const containerClassName = window.innerWidth > 600 ? ".boxik" : null;
 	const boxikRef = useRef(null);
 	function scrollTo(section) {
 		section.current.scrollIntoView({ behavior: "smooth" });
@@ -33,7 +33,7 @@ const ZahysnaPlivka = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: firstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -54,7 +54,7 @@ const ZahysnaPlivka = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: secondtRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -75,7 +75,7 @@ const ZahysnaPlivka = () => {
 				y: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: thirstRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -96,7 +96,7 @@ const ZahysnaPlivka = () => {
 				x: 0,
 				duration: 1,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fourthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -117,7 +117,7 @@ const ZahysnaPlivka = () => {
 				x: 0,
 				duration: 2,
 				scrollTrigger: {
-					scroller: ".boxik",
+					scroller: containerClassName,
 					trigger: fifthRef.current,
 					start: "top center",
 					end: "bottom center",
@@ -212,7 +212,7 @@ const ZahysnaPlivka = () => {
 				</div>
 				<div ref={section3}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
@@ -274,7 +274,7 @@ const ZahysnaPlivka = () => {
 				</div>
 				<div ref={section4}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
@@ -296,27 +296,13 @@ const ZahysnaPlivka = () => {
 										небажаних поглядів.
 									</p>
 								</div>
-								{/* <div className="container">
-									<div className="card">
-										<img src="..//img/plivka/plivka4/1.jpg" alt="car1" />
-									</div>
-									<div className="card">
-										<img src="..//img/plivka/plivka4/2.jpg" alt="car2" />
-									</div>
-									<div className="card">
-										<img src="..//img/plivka/plivka4/3.jpg" alt="car3" />
-									</div>
-									<div className="card">
-										<img src="..//img/plivka/plivka4/4.jpg" alt="car4" />
-									</div>
-								</div> */}
 							</div>
 						</div>
 					</Section>
 				</div>
 				<div ref={section5}>
 					<Section
-						showArrow={false}
+						showArrow={true}
 						goToSectionRef={section4}
 						scrollTo={scrollTo}
 					>
